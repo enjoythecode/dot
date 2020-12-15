@@ -3,6 +3,9 @@
 # Repository: https://github.com/mrzool/bash-sensible
 # Version: 0.2.2
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Unique Bash version check
 if ((BASH_VERSINFO[0] < 4))
 then 
@@ -22,13 +25,6 @@ shopt -s checkwinsize
 
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=2
-
-# Enable history expansion with space
-# E.g. typing !!<space> will replace the !! with your last command
-bind Space:magic-space
-
-# Turn on recursive globbing (enables ** to recurse all directories)
-shopt -s globstar 2> /dev/null
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -92,32 +88,19 @@ shopt -s cdspell 2> /dev/null
 # This defines where cd looks for targets
 # Add the directories you want to have fast access to, separated by colon
 # Ex: CDPATH=".:~:~/projects" will look for targets in the current working directory, in home and in the ~/projects folder
-CDPATH="."
+CDPATH=".:~:~/proj"
 
-# This allows you to bookmark your favorite places across the file system
 # Define a variable containing a path and you will be able to cd into it regardless of the directory you're in
 shopt -s cdable_vars
-
+export dotfiles="$HOME/dot"
 # Examples:
 # export dotfiles="$HOME/dotfiles"
 # export projects="$HOME/projects"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        # We have color support; assume it's compliant with Ecma-48
-        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-        # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
-    else
-        color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+alias ls='ls --color=auto'
+alias cp='cp -iv' # no overwrite, verbose cp
+PS1='[\u@\h \W]\$ '
+export PATH="$HOME/bin/bin:$PATH"
+export PATH="$HOME/src/scs:$PATH"
