@@ -101,6 +101,14 @@ export dotfiles="$HOME/dot"
 
 alias ls='ls --color=auto'
 alias cp='cp -iv' # no overwrite, verbose cp
+alias gs='git status'
+alias gcm='git commit -m'
+alias gph='git push'
+alias gpl='git pull'
+alias ga='git add '
+alias gall='git add .'
+
 PS1='[\u@\h \W]\$ '
+
 export PATH="$HOME/bin/bin:$PATH"
 export PATH="$HOME/src/scs:$PATH"
