@@ -110,5 +110,5 @@ alias gall='git add .'
 
 PS1='[\u@\h \W]\$ '
 
-export PATH="$HOME/bin/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/src/scs:$PATH"
