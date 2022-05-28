@@ -16,7 +16,7 @@ set foldlevelstart=1
 set foldmethod=indent
 
 " keep the current line towards the center
-set scrolloff=7
+set scrolloff=9
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -57,7 +57,7 @@ nnoremap <leader>to <c-W><c-L>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
-" open and close folds with this
+" open and close flds with this
 nnoremap <leader>f za 
 
 " shortcuts for find
