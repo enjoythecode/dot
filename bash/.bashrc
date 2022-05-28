@@ -52,6 +52,7 @@ alias sb=". ~/.bashrc"
 # "E"dit
 alias e="$EDITOR"
 alias eb="$EDITOR ~/.bashrc"
+alias ev="$EDITOR ~/.vimrc"
 
 # Misc.
 alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
