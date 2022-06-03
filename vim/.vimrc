@@ -18,6 +18,11 @@ set foldmethod=indent
 " keep the current line towards the center
 set scrolloff=9
 
+" statusline
+" display filename
+set laststatus=2
+set statusline=%f
+
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -32,6 +37,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 call plug#end()
+
 
 " Finding files
 set path+=** " enable searching subdirectiories recursively
