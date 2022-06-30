@@ -1,5 +1,5 @@
 export PATH="/Users/sinany/.pyenv/bin:$PATH"
-export EDITOR="vim"
+export EDITOR="nvim"
 
 HISTSIZE=20000
 HISTFILESIZE=20000
