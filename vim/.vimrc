@@ -25,7 +25,6 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf that makes sure that I have the latest binary installed"
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
