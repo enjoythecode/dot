@@ -1,0 +1,25 @@
+- hosts: local
+  tasks:
+    - name: "Install base software"
+      apt:
+        name: "Install base software with apt"
+        state: present
+      become: true
+      vars:
+        - git
+        - docker
+        - docker-compose
+        - python3-pip
+        - neovim
+    - name: "Pull dotfiles"
+      git:
+        repo: git@github.com:enjoythecode/dot
+        dest: ~/dot/
+        version: main
+        accept_hostkey: yes
+    - name: "Link .rc files to my dotfiles"
+      shell: |
+        ~/dot/sh/link.sh
+        source ~/.bashrc
+
+

@@ -1,9 +1,8 @@
 # Get Started
+Requirements: `python`, `apt` 
 ```
-cd ~
-git clone https://github.com/enjoythecode/dot.git
-dot/sh/link.sh
-. ~/.bashrc
+pip install ansible
+ansible-playbook ansible/sinan.yml
 ```
 
 # Words
