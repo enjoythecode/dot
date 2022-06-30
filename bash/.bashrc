@@ -25,6 +25,7 @@ alias o="open"
 # "G"it
 alias gs="git status"
 alias ga="git add "
+alias gb="git branch "
 alias all="gall"
 alias gall="git add ."
 alias gp="git push"
@@ -56,3 +57,6 @@ alias ev="$EDITOR ~/.vimrc"
 
 # Misc.
 alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
+
+alias dimp='java -jar ~/import/tool/target/datacommons-import-tool-0.1-alpha.1-jar-with-dependencies.jar'
+export PATH=~/apache/apache-maven-3.8.5/bin:$PATH

@@ -12,14 +12,26 @@ set dictionary+=/usr/share/dict/words
 " keep the current line towards the center
 set scrolloff=9
 
+" statusline
+" display filename
+set laststatus=2
+set statusline=%f
+
+" automatic installation of vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf that makes sure that I have the latest binary installed"
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 call plug#end()
+
 
 " Finding files
 set path+=** " enable searching subdirectiories recursively
@@ -73,6 +85,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Run files
 nnoremap <leader>rp :!python3 %<cr>
+"" Run Last (executed command)
+nnoremap <leader>rl :@:<cr>
 
 " Clear search results
 nnoremap <leader>c :noh<cr>
