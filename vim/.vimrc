@@ -8,14 +8,10 @@ set ruler " row, col, place in file and currently typed command information at t
 set relativenumber " make the line numberings relative for easier modification
 set cursorline " highlight the line the cursor is on
 set dictionary+=/usr/share/dict/words
-
-" keep the current line towards the center
-set scrolloff=9
+set scrolloff=9 " keep the current line towards the center
 
 " statusline
-" display filename
-set laststatus=2
-set statusline=%f
+set statusline=%f " display filename
 
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -32,19 +28,10 @@ Plug 'tpope/vim-surround' " s (surrounding) as a noun
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 call plug#end()
 
-
-" Finding files
 set path+=** " enable searching subdirectiories recursively
 
 set wildmenu " show tab completion in the command line for any command!
 colorscheme nightfox
-
-
-" CoC (Conquer of Completion) configuration
-
-" <cr> used to accept selection, and select the first item if no selection
-" done yet
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 let mapleader=' '
 
