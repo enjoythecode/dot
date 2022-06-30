@@ -1,11 +1,10 @@
-- hosts: local
+- hosts: localhost
   tasks:
     - name: "Install base software"
-      apt:
+      ansible.builtin.apt:
         name: "Install base software with apt"
         state: present
-      become: true
-      vars:
+        pkg:
         - git
         - docker
         - docker-compose

@@ -9,12 +9,6 @@ set relativenumber " make the line numberings relative for easier modification
 set cursorline " highlight the line the cursor is on
 set dictionary+=/usr/share/dict/words
 
-
-" folds
-set foldenable
-set foldlevelstart=1
-set foldmethod=indent
-
 " keep the current line towards the center
 set scrolloff=9
 
@@ -56,9 +50,6 @@ nnoremap <leader>to <c-W><c-L>
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
-
-" open and close flds with this
-nnoremap <leader>f za 
 
 " shortcuts for find
 " Open with Find/FZF (similar to ctrl-O)
