@@ -12,3 +12,4 @@ for component in exports.bashrc aliases_and_functions.bashrc configuration.bashr
 do
     source_file_if_exists $DOT_BASH/$component
 done
+

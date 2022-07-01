@@ -45,5 +45,7 @@ alias lh="ls -la ~"
 
 # Misc.
 alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
+alias golden="mvn -DgoldenFilesPrefix=$PWD/tool/src/test/resources/org/datacommons/tool package"
 
 alias dimp='java -jar ~/import/tool/target/datacommons-import-tool-0.1-alpha.1-jar-with-dependencies.jar'
+
