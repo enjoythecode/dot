@@ -1,6 +1,4 @@
 #!/bin/bash
 
-ln -s ~/dot/vim/.vimrc ~/.vimrc
-mkdir -p ~/.config/nvim
-ln -s ~/dot/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dot/nvim ~/.config/
 echo "[ -f $HOME/dot/bash/entry.bashrc ] && source $HOME/dot/bash/entry.bashrc" >> ~/.bashrc
