@@ -31,7 +31,7 @@ call plug#end()
 set path+=** " enable searching subdirectiories recursively
 
 set wildmenu " show tab completion in the command line for any command!
-colorscheme nightfox
+silent! colorscheme nightfox
 
 let mapleader=' '
 
