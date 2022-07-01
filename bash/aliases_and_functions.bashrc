@@ -1,5 +1,4 @@
 # Common 1-ers
-alias t="ls -la" # left index finger on Colemak
 alias l="ls -la"
 alias d="cd"
 alias s="git status" # left middle finger on Colemak
@@ -40,6 +39,9 @@ alias sb=". ~/.bashrc"
 alias e="$EDITOR"
 alias eb="$EDITOR ~/.bashrc"
 alias ev="$EDITOR ~/.vimrc"
+
+# "L"ist
+alias lh="ls -la ~"
 
 # Misc.
 alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021

@@ -8,7 +8,7 @@ function source_file_if_exists () {
 }
 
 DOT_BASH=$HOME/dot/bash
-for component in exports.bashrc aliases_and_functions.bashrc
+for component in exports.bashrc aliases_and_functions.bashrc configuration.bashrc
 do
     source_file_if_exists $DOT_BASH/$component
 done
