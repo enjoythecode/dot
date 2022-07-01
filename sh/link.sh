@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ln -s ~/dot/vim/.vimrc ~/.vimrc
-ln -s ~/dot/bash/.bashrc ~/.bashrc
+echo "[ -f $HOME/dot/bash/entry.bashrc ] && source $HOME/dot/bash/entry.bashrc" >> ~/.bashrc

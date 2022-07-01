@@ -1,17 +1,3 @@
-export PATH="/Users/sinany/.pyenv/bin:$PATH"
-export EDITOR="nvim"
-
-HISTSIZE=20000
-HISTFILESIZE=20000
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-PATH=$PATH:/usr/local/share/dotnet
-PATH="$PATH:/Users/sinany/bin"
-export PATH
-
 # Common 1-ers
 alias t="ls -la" # left index finger on Colemak
 alias l="ls -la"
@@ -59,4 +45,3 @@ alias ev="$EDITOR ~/.vimrc"
 alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
 
 alias dimp='java -jar ~/import/tool/target/datacommons-import-tool-0.1-alpha.1-jar-with-dependencies.jar'
-export PATH=~/apache/apache-maven-3.8.5/bin:$PATH
