@@ -41,8 +41,16 @@ Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and qu
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
+lua require("nvim-web-devicons").setup()
+lua require("nvim-tree").setup()
+lua require("nvim-lsp-installer").setup {automatic_installation = true}
+"lua require("lspconfig").pyright.setup {}
+"lua require'lspconfig'.gopls.setup{}
+"
 set path+=** " enable searching subdirectiories recursively
 
 set wildmenu " show tab completion in the command line for any command!
@@ -123,6 +131,3 @@ set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 
 " Show @@@ in the last line if it is truncated.
 set display=truncate
-lua require("nvim-lsp-installer").setup {automatic_installation = true}
-"lua require("lspconfig").pyright.setup {}
-"lua require'lspconfig'.gopls.setup{}
