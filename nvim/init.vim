@@ -11,7 +11,6 @@ autocmd BufWinLeave * call clearmatches()
 set nohidden
 set number " add line numbers
 set history=10000
-set nocompatible " enter the current millenium
 set hlsearch " highlight search
 set incsearch " show match as it is written
 set encoding=utf-8
