@@ -33,6 +33,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'EdenEast/nightfox.nvim' " theme
+Plug 'navarasu/onedark.nvim' " theme
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf that makes sure that I have the latest binary installed"
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
@@ -45,7 +46,11 @@ call plug#end()
 set path+=** " enable searching subdirectiories recursively
 
 set wildmenu " show tab completion in the command line for any command!
-silent! colorscheme nightfox
+
+
+let g:onedark_config = {'style': 'deep'}
+colorscheme onedark
+
 
 let mapleader=' '
 
@@ -86,9 +91,11 @@ nnoremap <leader>oa :edit #<cr>
 " Source my Vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Run files
+" Run Python 3
 nnoremap <leader>rp :!python3 %<cr>
-"" Run Last (executed command)
+" Run a command with Fzf
+nnoremap <leader>rf :Commands<cr>
+" Run Last (executed command)
 nnoremap <leader>rl :@:<cr>
 
 " Clear search results
@@ -117,6 +124,5 @@ set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 " Show @@@ in the last line if it is truncated.
 set display=truncate
 lua require("nvim-lsp-installer").setup {automatic_installation = true}
-lua require("lspconfig").pyright.setup {}
-lua require'lspconfig'.gopls.setup{}
-lua vim.lsp.set_log_level("debug")
+"lua require("lspconfig").pyright.setup {}
+"lua require'lspconfig'.gopls.setup{}
