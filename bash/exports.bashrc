@@ -4,7 +4,6 @@ then
 else
     export EDITOR="vim"
 fi
-echo "Set $EDITOR as the EDITOR"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

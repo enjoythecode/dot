@@ -1,9 +1,6 @@
 function source_file_if_exists () {
     if [ -f $1 ]; then
-        echo "sourcing $1"
         source $1
-    else
-        echo "could not source $1 because it doesn't exist"
     fi
 }
 

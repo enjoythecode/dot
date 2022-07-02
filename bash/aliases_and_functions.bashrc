@@ -70,8 +70,8 @@ function list_available_aliases () {
 }
 export -f list_available_aliases
 
-function fzf_among_available_functions_and_execute_it () {
-    list_available_functions | fzf | xargs -I {} bash -c '{}'
+function fzf_available_functions_and_execute_it () {
+    list_available_functions | fzf | xargs -I {} bash -c -i '{}'
 }
-export -f fzf_among_available_functions_and_execute_it
-alias p="fzf_among_available_functions_and_execute_it"
+export -f fzf_available_functions_and_execute_it
+alias p="fzf_available_functions_and_execute_it"
