@@ -2,7 +2,6 @@
 alias l="ls -la"
 alias d="cd"
 alias s="git status" # left middle finger on Colemak
-alias p="cp"
 alias c="clear"
 alias v="mv"
 alias o="open"
@@ -25,6 +24,7 @@ function git_add_all_commit () {
     git add .
     git commit
 }
+export -f git_add_all_commit
 alias gac="git_add_all_commit"
 
 # "M"ake
@@ -58,3 +58,20 @@ function list_aliases_and_function_names_in_dot_bashrc () {
     grep -e alias -e function ~/dot/bash/aliases_and_functions.bashrc
     # alias + declare -F does the same but for everything that bash knows about!
 }
+export -f list_aliases_and_function_names_in_dot_bashrc
+
+function list_available_functions () {
+    declare -F | awk 'sub("declare -fx ", "")'
+}
+export -f list_available_functions
+
+function list_available_aliases () {
+    alias | awk 'sub("alias ", "")'
+}
+export -f list_available_aliases
+
+function fzf_among_available_functions_and_execute_it () {
+    list_available_functions | fzf | xargs -I {} bash -c '{}'
+}
+export -f fzf_among_available_functions_and_execute_it
+alias p="fzf_among_available_functions_and_execute_it"
