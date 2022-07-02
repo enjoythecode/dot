@@ -62,17 +62,26 @@ colorscheme onedark
 
 let mapleader=' '
 
+" colemak: navigate with the new locations of hjkl
+" in colemak, but swap the up and right to make it right
+noremap j k
+noremap k j
+
 " git shortcuts
 nnoremap <leader>gs :!git status<CR>
 nnoremap <leader>gc :!git commit -m "
 nnoremap <leader>gp :!git push<CR>
 nnoremap <leader>ga :!git add .<CR>
 
-" window navigation (using hjkl => neio)
-nnoremap <leader>tn <c-W><c-H>
-nnoremap <leader>te <c-W><c-K>
-nnoremap <leader>ti <c-W><c-J>
-nnoremap <leader>to <c-W><c-L>
+" window navigation (using "colemak hjkl")
+nnoremap <leader>th <c-W><c-H>
+nnoremap <leader>tj <c-W><c-K>
+nnoremap <leader>tk <c-W><c-J>
+nnoremap <leader>tl <c-W><c-L>
+
+" nvim-tree
+nnoremap <leader>tn :NvimTreeToggle<CR>
+nnoremap <leader>to :NvimTreeFocus<CR>
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
@@ -119,7 +128,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-set fileformat=unix
 
 "Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
