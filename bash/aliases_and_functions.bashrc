@@ -97,7 +97,15 @@ export -f profile_nvim_startup_time
 # way that feels magical to me.
 # Currently, it just can handle functions and aliases through "type"
 function how () {
-    type $1
+    function how_core () {
+        type $1
+    }
+    if [ -z $1 ]; then
+        how_core  $(list_available_functions | fzf)
+    else
+        how_core $1
+    fi
+
 }
 export -f how
 
