@@ -39,7 +39,10 @@ alias sb=". ~/.bashrc"
 # "E"dit
 alias e="$EDITOR"
 alias eb="$EDITOR ~/.bashrc"
-alias ev="$EDITOR ~/.vimrc"
+alias eba="$EDITOR ~/dot/bash/aliases_and_functions.bashrc"
+alias ebe="$EDITOR ~/dot/bash/exports.bashrc"
+alias ebc="$EDITOR ~/dot/bash/configuration.bashrc"
+alias ev="$EDITOR ~/.config/nvim/init.vim"
 
 # "L"ist
 alias lh="ls -la ~"

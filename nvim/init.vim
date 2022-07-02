@@ -1,4 +1,3 @@
-set nohidden
 " Highlight trailing whitespace
 " Source: https://vim.fandom.com/wiki/Highlight_unwanted_spaces (scroll down
 " to right before "Highlighting with the syntax command" for
@@ -9,6 +8,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+set nohidden
 set number " add line numbers
 set history=10000
 set nocompatible " enter the current millenium
@@ -39,6 +39,7 @@ Plug 'tpope/vim-surround' " s (surrounding) as a noun
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
+Plug 'mfussenegger/nvim-jdtls'
 call plug#end()
 
 set path+=** " enable searching subdirectiories recursively
@@ -117,3 +118,5 @@ set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 set display=truncate
 lua require("nvim-lsp-installer").setup {automatic_installation = true}
 lua require("lspconfig").pyright.setup {}
+lua require'lspconfig'.gopls.setup{}
+lua vim.lsp.set_log_level("debug")
