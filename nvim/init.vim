@@ -20,8 +20,17 @@ set cursorline " highlight the line the cursor is on
 set dictionary+=/usr/share/dict/words
 set scrolloff=9 " keep the current line towards the center
 
+"Allow backspacing over everything in insert mode.
+set backspace=indent,eol,start
+set showcmd		" display incomplete commands
+set ttimeout		" time out for key codes
+set ttimeoutlen=100	" wait up to 100ms after Esc for special key
+
 " statusline
 set statusline=%f " display filename
+
+set path+=** " enable searching subdirectiories recursively
+set wildmenu " show tab completion in the command line for any command!
 
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -49,15 +58,9 @@ lua require("nvim-tree").setup()
 lua require("nvim-lsp-installer").setup {automatic_installation = true}
 "lua require("lspconfig").pyright.setup {}
 "lua require'lspconfig'.gopls.setup{}
-"
-set path+=** " enable searching subdirectiories recursively
-
-set wildmenu " show tab completion in the command line for any command!
-
 
 let g:onedark_config = {'style': 'deep'}
 colorscheme onedark
-
 
 let mapleader=' '
 
@@ -119,14 +122,3 @@ nnoremap <leader>c :noh<cr>
 
 " Get help inside of vim
 nnoremap <leader>h :h<space>
-
-"Allow backspacing over everything in insert mode.
-set backspace=indent,eol,start
-
-set showcmd		" display incomplete commands
-
-set ttimeout		" time out for key codes
-set ttimeoutlen=100	" wait up to 100ms after Esc for special key
-
-" Show @@@ in the last line if it is truncated.
-set display=truncate
