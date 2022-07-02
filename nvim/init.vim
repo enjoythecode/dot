@@ -120,14 +120,6 @@ nnoremap <leader>c :noh<cr>
 " Get help inside of vim
 nnoremap <leader>h :h<space>
 
-
-" PEP 8 indentation
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-
 "Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
