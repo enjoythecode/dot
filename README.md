@@ -9,6 +9,14 @@ source ~/.bashrc
 # hack away; e(dit), l(s), c(lear) (c)d,...
 ```
 
+# Dependencies
+*list is very incomplete as of 2022-07-01*
+nvim
+
+## OS X only
+brew install coreutils
+
+
 # Words
 My setup. Efficiency of keystrokes (less friction) and portability (low high-tail friction)
 are priorities.
