@@ -1,5 +1,14 @@
 # Common 1-ers
-alias l="ls -la"
+alias l="ls -lah" # -l=show extended; -a=show hidden; -h=format sizes humanly
+function ls_show_largest_first () {
+    # use awk to get rid of the first two lines
+    # first line is "total <item_count>"
+    # second line is the ls line for ".." (since that is bound to be the largest)
+    ls -lahS | awk 'NR > 2' # -S; sort by file size
+}
+export ls_show_largest_first
+alias largest="ls_show_largest_first"
+
 alias d="cd"
 alias s="git status" # left middle finger on Colemak
 alias c="clear"
@@ -80,3 +89,14 @@ function profile_nvim_startup_time () {
     nvim --startuptime /dev/stdout +qall
 }
 export -f profile_nvim_startup_time
+
+# this is the idea for a function that I have
+# the idea is that given a query, it will find a relevant
+# result from my bash configuration (or other resources, such
+# as a collection of bash tricks, etc.) and let me know in a
+# way that feels magical to me.
+# Currently, it just can handle functions and aliases through "type"
+function how () {
+    type $1
+}
+export -f how

@@ -12,6 +12,7 @@ source ~/.bashrc
 # Dependencies
 *list is very incomplete as of 2022-07-01*
 nvim
+ripgrep
 
 ## OS X only
 brew install coreutils
