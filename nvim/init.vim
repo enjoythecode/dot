@@ -1,6 +1,6 @@
 " Highlight trailing whitespace
 " Source: https://vim.fandom.com/wiki/Highlight_unwanted_spaces (scroll down
-" to right before "Highlighting with the syntax command" for
+" to right before "Highlighting with the syntax command" for full block)
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -8,7 +8,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-set nohidden
 set number " add line numbers
 set history=10000
 set hlsearch " highlight search
@@ -41,16 +40,17 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'EdenEast/nightfox.nvim' " theme
 Plug 'navarasu/onedark.nvim' " theme
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf that makes sure that I have the latest binary installed"
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'akinsho/toggleterm.nvim'
 call plug#end()
 
 lua require("plugins")
@@ -72,10 +72,10 @@ nnoremap <leader>gp :!git push<CR>
 nnoremap <leader>ga :!git add .<CR>
 
 " window navigation (using "colemak hjkl")
-nnoremap <leader>th <c-W><c-H>
-nnoremap <leader>tj <c-W><c-K>
-nnoremap <leader>tk <c-W><c-J>
-nnoremap <leader>tl <c-W><c-L>
+nnoremap <leader>eh <c-W><c-H>
+nnoremap <leader>ej <c-W><c-K>
+nnoremap <leader>ek <c-W><c-J>
+nnoremap <leader>el <c-W><c-L>
 
 " nvim-tree
 nnoremap <leader>tn :NvimTreeToggle<CR>
@@ -84,11 +84,13 @@ nnoremap <leader>to :NvimTreeFocus<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
-" shortcuts for find
-" Open with Find/FZF (similar to ctrl-O)
-" use <Enter> to open file in place of currently open
-" use <CTRL-V> for vertical split
-nnoremap <leader>of :Files<CR>
+" TELESCOPE GOODNESS BAY-BUH!
+nnoremap <leader>tt <cmd>Telescope builtin<cr>
+nnoremap <leader>tf <cmd>Telescope find_files<cr>
+nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+nnoremap <leader>tb <cmd>Telescope buffers<cr>
+nnoremap <leader>th <cmd>Telescope help_tags<cr>
+nnoremap <leader>tc <cmd>Telescope commands<cr>
 
 " Open new file (in split)
 nnoremap <leader>on :vnew<CR>
@@ -98,18 +100,18 @@ nnoremap <leader>od :edit `sh/open_daily_note.sh`<CR>
 nnoremap <leader>os :edit ~/scratch.txt<cr>
 " Open my .vimrc
 nnoremap <leader>ov :edit $MYVIMRC<cr>
-" Open my init.lua
-nnoremap <leader>ol :edit ~/.config/nvim/init.lua<cr>
+" Open lua/plugins.lua
+nnoremap <leader>op :edit ~/.config/nvim/lua/plugins.lua<cr>
 " Open alternate file (usually, the previous file)
 nnoremap <leader>oa :edit #<cr>
+" toggle the terminAl (floating)
+nnoremap <leader>a <cmd>ToggleTerm direction=float<CR>
 
 " Source Vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Run Python 3
 nnoremap <leader>rp :!python3 %<cr>
-" Run a command with Fzf
-nnoremap <leader>rf :Commands<cr>
 " Run Last (executed command)
 nnoremap <leader>rl :@:<cr>
 " Run Bang (command)
@@ -118,9 +120,5 @@ nnoremap <leader>rb :!
 " Clear search results
 nnoremap <leader>c :noh<cr>
 
-" Get help inside of vim
-nnoremap <leader>h :h<space>
-
 " Terminal Quit Using <Esc>
 :tnoremap <Esc> <C-\><C-n>
-
