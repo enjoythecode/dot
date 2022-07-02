@@ -80,7 +80,7 @@ function list_available_aliases () {
 export -f list_available_aliases
 
 function fzf_available_functions_and_execute_it () {
-    list_available_functions | fzf | xargs -I {} bash -c -i '{}'
+    list_available_functions | fzf --preview="explain_how_function_works {}" | xargs -I {} bash -c -i '{}'
 }
 export -f fzf_available_functions_and_execute_it
 alias p="fzf_available_functions_and_execute_it"
@@ -96,7 +96,7 @@ export -f profile_nvim_startup_time
 # as a collection of bash tricks, etc.) and let me know in a
 # way that feels magical to me.
 # Currently, it just can handle functions and aliases through "type"
-function how () {
+function explain_how_function_works () {
     function how_core () {
         type $1
     }
@@ -107,7 +107,8 @@ function how () {
     fi
 
 }
-export -f how
+export -f explain_how_function_works
+alias how="explain_how_function_works"
 
 # if $1 is a string, find its location and open it with editor
 # if not, drop the user to a fzf of available functions, and then
