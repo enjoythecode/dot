@@ -40,6 +40,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'EdenEast/nightfox.nvim' " theme
 Plug 'navarasu/onedark.nvim' " theme
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf that makes sure that I have the latest binary installed"
@@ -49,18 +50,13 @@ Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and qu
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
-Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
-lua require("nvim-web-devicons").setup()
-lua require("nvim-tree").setup()
-lua require("nvim-lsp-installer").setup {automatic_installation = true}
-"lua require("lspconfig").pyright.setup {}
-"lua require'lspconfig'.gopls.setup{}
+lua require("plugins")
 
-let g:onedark_config = {'style': 'deep'}
-colorscheme onedark
+" let g:onedark_config = {'style': 'deep'}
+colorscheme nightfox
 
 let mapleader=' '
 
@@ -107,7 +103,7 @@ nnoremap <leader>ol :edit ~/.config/nvim/init.lua<cr>
 " Open alternate file (usually, the previous file)
 nnoremap <leader>oa :edit #<cr>
 
-" Source my Vimrc
+" Source Vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Run Python 3
@@ -116,9 +112,15 @@ nnoremap <leader>rp :!python3 %<cr>
 nnoremap <leader>rf :Commands<cr>
 " Run Last (executed command)
 nnoremap <leader>rl :@:<cr>
+" Run Bang (command)
+nnoremap <leader>rb :!
 
 " Clear search results
 nnoremap <leader>c :noh<cr>
 
 " Get help inside of vim
 nnoremap <leader>h :h<space>
+
+" Terminal Quit Using <Esc>
+:tnoremap <Esc> <C-\><C-n>
+
