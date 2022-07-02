@@ -100,3 +100,20 @@ function how () {
     type $1
 }
 export -f how
+
+# if $1 is a string, find its location and open it with editor
+# if not, drop the user to a fzf of available functions, and then
+# call self with the selection
+function go_to_definition_of_function () {
+    function go_to_definition_of_function_core () {
+        file=~/dot/bash/aliases_and_functions.bashrc
+        rg --vimgrep "function $1 \(\) \{" $file | awk -F: '{print $1" +"$2}' | xargs nvim
+    }
+    if [ -z $1 ]; then
+        go_to_definition_of_function_core $(list_available_functions | fzf)
+    else
+        go_to_definition_of_function_core $1
+    fi
+}
+export -f go_to_definition_of_function
+alias godef="go_to_definition_of_function"
