@@ -75,3 +75,8 @@ function fzf_available_functions_and_execute_it () {
 }
 export -f fzf_available_functions_and_execute_it
 alias p="fzf_available_functions_and_execute_it"
+
+function profile_nvim_startup_time () {
+    nvim --startuptime /dev/stdout +qall
+}
+export -f profile_nvim_startup_time
