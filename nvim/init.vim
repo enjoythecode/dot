@@ -136,3 +136,8 @@ nnoremap <leader>c :noh<cr>
 nnoremap <leader>vo <cmd>DiffviewOpen<CR>
 nnoremap <leader>vq <cmd>DiffviewClose<CR>
 nnoremap <leader>vh <cmd>DiffviewFileHistory<CR>
+
+nnoremap <leader>dd <cmd>cd ~/dot<CR>
+nnoremap <leader>dr <cmd>cd ~/dot/recipes<CR>
+nnoremap <leader>dh <cmd>cd ~<CR>
+
