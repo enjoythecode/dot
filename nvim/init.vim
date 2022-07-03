@@ -21,7 +21,7 @@ set scrolloff=9 " keep the current line towards the center
 
 "Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
-set showcmd		" display incomplete commands
+set showcmd			" display incomplete commands
 set ttimeout		" time out for key codes
 set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 
@@ -33,6 +33,11 @@ set wildmenu " show tab completion in the command line for any command!
 
 " for sindrets/diffview.nvim
 set fillchars+=diff:╱
+
+" set tabs to 4
+set tabstop=4
+" make shift (such as the one by the commands < and >) use the tab size
+set shiftwidth=0
 
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
