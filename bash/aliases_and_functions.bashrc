@@ -50,7 +50,8 @@ alias e="$EDITOR"
 alias eb="$EDITOR ~/.bashrc"
 alias eba="$EDITOR ~/dot/bash/aliases_and_functions.bashrc"
 alias ebe="$EDITOR ~/dot/bash/exports.bashrc"
-alias ebc="$EDITOR ~/dot/bash/configuration.bashrc"
+alias ebcfg="$EDITOR ~/dot/bash/configuration.bashrc"
+alias ebc="$EDITOR ~/dot/bash/components.bashrc"
 alias ev="$EDITOR ~/.config/nvim/init.vim"
 
 # "L"ist
@@ -126,3 +127,10 @@ function go_to_definition_of_function () {
 }
 export -f go_to_definition_of_function
 alias godef="go_to_definition_of_function"
+
+function change_directory_to_previous_directory () {
+	cd -
+}
+export -f change_directory_to_previous_directory
+alias db="change_directory_to_previous_directory"
+
