@@ -31,6 +31,9 @@ set statusline=%f " display filename
 set path+=** " enable searching subdirectiories recursively
 set wildmenu " show tab completion in the command line for any command!
 
+" for sindrets/diffview.nvim
+set fillchars+=diff:╱
+
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -51,6 +54,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'sindrets/diffview.nvim'
 call plug#end()
 
 lua require("plugins")
@@ -122,3 +126,8 @@ nnoremap <leader>c :noh<cr>
 
 " Terminal Quit Using <Esc>
 :tnoremap <Esc> <C-\><C-n>
+
+" diffView
+nnoremap <leader>vo <cmd>DiffviewOpen<CR>
+nnoremap <leader>vq <cmd>DiffviewClose<CR>
+nnoremap <leader>vh <cmd>DiffviewFileHistory<CR>
