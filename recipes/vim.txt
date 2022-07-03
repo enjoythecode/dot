@@ -1,0 +1,2 @@
+# Go to URL under cursor
+`gx` in normal mode
