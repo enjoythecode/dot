@@ -26,9 +26,6 @@ set showcmd			" display incomplete commands
 set ttimeout		" time out for key codes
 set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 
-" statusline
-set statusline=%f " display filename
-
 set path+=** " enable searching subdirectiories recursively
 set wildmenu " show tab completion in the command line for any command!
 
