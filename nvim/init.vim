@@ -18,6 +18,7 @@ set relativenumber " make the line numberings relative for easier modification
 set cursorline " highlight the line the cursor is on
 set dictionary+=/usr/share/dict/words
 set scrolloff=9 " keep the current line towards the center
+set textwidth=80
 
 "Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
