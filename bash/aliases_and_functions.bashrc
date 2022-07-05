@@ -12,7 +12,7 @@ alias largest="ls_show_largest_first"
 alias d="cd"
 alias s="git status" # left middle finger on Colemak
 alias c="clear"
-alias v="mv"
+alias mv="mv -i" # confirm before overwriting, silently works otherwise
 alias o="open"
 
 # "G"it
