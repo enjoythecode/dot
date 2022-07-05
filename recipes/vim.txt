@@ -1,2 +1,5 @@
 # Go to URL under cursor
 `gx` in normal mode
+
+# Format line according to `textwidth` (and other settings, see `:h gq`)
+`gq`{motion} in normal mode
