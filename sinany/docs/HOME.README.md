@@ -17,17 +17,18 @@ Therefore, the primary qualities I desire from my computing set up are
   at near-maximum capacity with little ramp-up. It should not assume a large
   swath of *working knowledge* -- those things that we forget are necessary to
   effectively operate a system but will nevertheless trip those who are coming
-  to systems after a while.
+  to a system fresh with no or little fresh experience with the system.
 - **Maintainability**: The system should make it easy to make changes to it --
   either for maintenance (fixing something that is broken, either due to initial
   mistakes, or over time), or enhancement (adding new features). This quality
   can be then broken down in to three categories where **Maintainability**
-  matters; 1) It should be easy to locate where changes are to be made (your
-  software is refactored such that its abstractions are sensible, riiiight?) 2)
-  It should be easy to make the changes to the system (your software is modified
-  in frequent, small chunks to ensure it malleability, riiiight?) 3) It should
-  be easy to verify that the changes had the desired effect (you write tests,
-  riiight?)
+  matters;
+  1. It should be easy to locate where changes are to be made (your software is
+	 refactored such that its abstractions are sensible, riiiight?)
+  2. It should be easy to make the changes to the system (your software is
+	 modified in frequent, small chunks to ensure it malleability, riiiight?)
+  3. It should be easy to verify that the changes had the desired effect (you
+	 write tests, riiight?)
 - *Neatness* and *Elegance* are personal preferences; it is a personal judgement
   that is too subjective to be documented and just subjective enough to be left
   for my own discretion.
@@ -50,8 +51,8 @@ repository)[github.com/enjoythecode/dot/]
 `Projects.git` holds your code files that are synced with git; you'll find many
 project here.
 
-TODO what else might I have? TODO what about the other stuff? Do I not care
-about it, then?
+TODO what else might I have?
+TODO what about the other stuff? Do I not care about it, then?
 
 # Insurance Against Bad Things
 
