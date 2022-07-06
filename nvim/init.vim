@@ -63,7 +63,10 @@ call plug#end()
 lua require("plugins")
 
 " let g:onedark_config = {'style': 'deep'}
-colorscheme nightfox
+colorscheme onedark
+
+" make gf open the file if it doesn't exist (from :h gf)
+:map gf :e <cfile><CR>
 
 let mapleader=' '
 
