@@ -32,10 +32,16 @@ set wildmenu " show tab completion in the command line for any command!
 " for sindrets/diffview.nvim
 set fillchars+=diff:╱
 
-" set tabs to 4
+" use tabs for indentation and do not expand it to spaces. tabs are shown
+" to be 4 characters wide.
+set autoindent
+set noexpandtab
 set tabstop=4
-" make shift (such as the one by the commands < and >) use the tab size
-set shiftwidth=0
+set shiftwidth=4
+
+" show whitespaces
+set list
+set listchars=tab:>·
 
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
