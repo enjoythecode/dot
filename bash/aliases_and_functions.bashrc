@@ -6,7 +6,7 @@ function ls_show_largest_first () {
     # second line is the ls line for ".." (since that is bound to be the largest)
     ls -lahS | awk 'NR > 2' # -S; sort by file size
 }
-export ls_show_largest_first
+export -f ls_show_largest_first
 alias largest="ls_show_largest_first"
 
 alias d="cd"
