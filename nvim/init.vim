@@ -64,6 +64,7 @@ Plug 'mfussenegger/nvim-jdtls'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'sindrets/diffview.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 lua require("plugins")
