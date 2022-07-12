@@ -65,7 +65,12 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+" Install dependencies with :COQdeps, and then :COQnow to start it
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Main COQ
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ COQ Snippets
 call plug#end()
+
+let g:coq_settings = { 'auto_start': 'shut-up' }
 
 lua require("plugins")
 

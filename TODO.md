@@ -26,7 +26,5 @@ TODO for the various files (and by extension, by personal computing config).
 - https://github.com/lukas-reineke/indent-blankline.nvim
 - https://github.com/nvim-treesitter/nvim-treesitter
 - https://github.com/sirver/UltiSnips
-- https://github.com/ms-jpq/coq_nvim
 
 - sneak/hop
-- completion (YouCompleteMe?)
