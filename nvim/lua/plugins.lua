@@ -7,5 +7,4 @@ require("toggleterm").setup()
 require('lualine').setup {
 	options = { theme = 'onedark' }
 }
--- require("lspconfig").pyribht.setup {}
--- require'lspconfig'.gopls.setup{}
+-- require("lspconfig").pyright.setup {}
