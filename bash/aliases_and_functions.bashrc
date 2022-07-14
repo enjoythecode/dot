@@ -69,14 +69,9 @@ alias golden="mvn -DgoldenFilesPrefix=$PWD/tool/src/test/resources/org/datacommo
 alias dimp='java -jar ~/import/tool/target/datacommons-import-tool-0.1-alpha.1-jar-with-dependencies.jar'
 
 # Functions
-function list_aliases_and_function_names_in_dot_bashrc () {
-    grep -e alias -e function ~/dot/bash/aliases_and_functions.bashrc
-    # alias + declare -F does the same but for everything that bash knows about!
-}
-export -f list_aliases_and_function_names_in_dot_bashrc
 
 function list_available_functions () {
-    declare -F | awk 'sub("declare -fx ", "")'
+    declare -Fx | awk 'sub("declare -fx ", "")'
 }
 export -f list_available_functions
 
@@ -85,10 +80,15 @@ function list_available_aliases () {
 }
 export -f list_available_aliases
 
+function list_aliases_and_functions () {
+	{ list_available_aliases ; list_available_functions ; }
+}
+export -f list_aliases_and_functions
+
 # pressing `p` drops user into fzf of available functions and aliases. selecting
 # one executes it. preview of the function is provided through explain_how_function_works
 function fzf_aliases_functions_and_execute_it () {
-	{ list_available_aliases & list_available_functions; } | fzf --preview="explain_how_function_works {}" | cut -d"=" -f1 | xargs -I {} bash -c -i '{}'
+	list_aliases_and_functions | fzf --preview="explain_how_function_works {}" | cut -d"=" -f1 | xargs -I {} bash -c -i '{}'
 }
 export -f fzf_aliases_functions_and_execute_it
 alias p="fzf_aliases_functions_and_execute_it"
@@ -173,3 +173,24 @@ function random_integer_between_min_and_max () {
 }
 export -f random_integer_between_min_and_max
 alias rand="random_integer_between_min_and_max"
+
+# trims leading and trailing whitespace
+# collapses internal whitespace of more than into one space
+#
+# Example:
+# Input (STDIN): "       foo       bar      "
+# Output (STDOUT): "foo bar"
+function trim_and_collapse_whitespace () {
+	# https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
+	# apparently, the last "echo" is not necessary as it is the default, but
+	# this is obscure enough, so I will put it there!
+	xargs echo
+}
+function display_random_custom_bash_tip () {
+	count=$(list_aliases_and_functions | wc -l | trim_and_collapse_whitespace)
+	index=$(random_integer_between_min_and_max 1 $count)
+	chosen=$(list_aliases_and_functions | head -n $index | tail -n 1)
+	echo "TIP [ $index / $count ]: $chosen"
+}
+export -f display_random_custom_bash_tip
+alias tip="display_random_custom_bash_tip"
