@@ -6,6 +6,7 @@
 
 ## Health (`./sh/health`)
 
+- health-home: check clutter in ~
 - check the installation of the tools that I want
 - call nvim checkhealth externally?
 - (stretch): record last output (.gitignored) and show diff?
