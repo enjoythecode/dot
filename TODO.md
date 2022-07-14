@@ -1,10 +1,25 @@
-TODO for the various files (and by extension, by personal computing config).
+- move these sub-TODOs to relevant sub-folders, just link to those from here
+
+# Scripts (`./sh`)
+
+- new TODO script to create a list of my TODO files?
+
+## Health (`./sh/health`)
+
+- check the installation of the tools that I want
+- call nvim checkhealth externally?
+- (stretch): record last output (.gitignored) and show diff?
+- check that SyncThing has synced my things!
 
 # Bash/Terminal
+
 - `r`; read README if exists
 - script to point out out-of-place files (S/ToSort, Trash, ~/\*...)
 	- run on login?
 - prompt.bashrc; display environment
+- https://apple.stackexchange.com/questions/88515/how-do-i-edit-current-shell-command-in-vi
+- Bind up and down arrows to history search backward and forward
+- Tmux / alacrity?
 
 # Editor/Nvim
 
