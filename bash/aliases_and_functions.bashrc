@@ -151,3 +151,25 @@ function run_custom_health_check_scripts () {
 }
 export -f run_custom_health_check_scripts
 alias h="run_custom_health_check_scripts"
+
+# Parameters
+# $1 is minimum
+# $2 is maximum
+# Will ask for parameters if not given
+function random_integer_between_min_and_max () {
+	if [ -z $1 ]; then
+		echo "enter minimum integer of random range: "
+		read min
+	else
+		min=$1
+	fi
+	if [ -z $2 ]; then
+		echo "enter maximum integer of random range: "
+		read max
+	else
+		max=$2
+	fi
+	echo $(($RANDOM % $max + $min))
+}
+export -f random_integer_between_min_and_max
+alias rand="random_integer_between_min_and_max"
