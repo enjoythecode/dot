@@ -14,7 +14,6 @@
 
 # Bash/Terminal
 
-- enrich `p` with aliases!
 - `r`; read README if exists
 - script to point out out-of-place files (S/ToSort, Trash, ~/\*...)
 	- run on login?

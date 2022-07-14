@@ -85,12 +85,13 @@ function list_available_aliases () {
 }
 export -f list_available_aliases
 
-function fzf_available_functions_and_execute_it () {
-
-	{echo "dummy" & list_available_functions; } | fzf --preview="explain_how_function_works {}" | xargs -I {} bash -c -i '{}'
+# pressing `p` drops user into fzf of available functions and aliases. selecting
+# one executes it. preview of the function is provided through explain_how_function_works
+function fzf_aliases_functions_and_execute_it () {
+	{ list_available_aliases & list_available_functions; } | fzf --preview="explain_how_function_works {}" | cut -d"=" -f1 | xargs -I {} bash -c -i '{}'
 }
-export -f fzf_available_functions_and_execute_it
-alias p="fzf_available_functions_and_execute_it"
+export -f fzf_aliases_functions_and_execute_it
+alias p="fzf_aliases_functions_and_execute_it"
 
 function profile_nvim_startup_time () {
     nvim --startuptime /dev/stdout +qall
@@ -110,7 +111,12 @@ function explain_how_function_works () {
     if [ -z $1 ]; then
         how_core  $(list_available_functions | fzf)
     else
-        how_core $1
+		# if this is an alias listing, only give the part before the alias to how_core
+		if [[ $1 == *"="* ]]; then
+			how_core $(echo $1 | cut -d"=" -f1)
+		else
+			how_core $1
+		fi
     fi
 
 }
