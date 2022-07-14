@@ -53,6 +53,9 @@ alias ebe="$EDITOR ~/dot/bash/exports.bashrc"
 alias ebcfg="$EDITOR ~/dot/bash/configuration.bashrc"
 alias ebc="$EDITOR ~/dot/bash/components.bashrc"
 alias ev="$EDITOR ~/.config/nvim/init.vim"
+alias r="$EDITOR ./README.md"
+alias t="$EDITOR ./TODO.md"
+alias th="$EDITOR ~/TODO.md"
 
 # "L"ist
 alias lh="ls -la ~"
