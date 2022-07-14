@@ -1,0 +1,1 @@
+- ftplugin; indent to 2 spaces in MD files, git commit message files
