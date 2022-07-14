@@ -21,7 +21,6 @@ alias ga="git add "
 alias gb="git branch "
 alias all="gall"
 alias gall="git add ."
-alias gp="git push"
 alias g2="git push" # git "to"
 alias g4="git pull" # git "from"
 alias gcm="git commit -m "
@@ -87,7 +86,8 @@ function list_available_aliases () {
 export -f list_available_aliases
 
 function fzf_available_functions_and_execute_it () {
-    list_available_functions | fzf --preview="explain_how_function_works {}" | xargs -I {} bash -c -i '{}'
+
+	{echo "dummy" & list_available_functions; } | fzf --preview="explain_how_function_works {}" | xargs -I {} bash -c -i '{}'
 }
 export -f fzf_available_functions_and_execute_it
 alias p="fzf_available_functions_and_execute_it"
