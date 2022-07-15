@@ -1,4 +1,5 @@
 - move these sub-TODOs to relevant sub-folders, just link to those from here
+- put ~/TODO.md inside sinany/docs and link in link.sh
 
 # Experiments
 
