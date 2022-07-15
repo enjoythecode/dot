@@ -8,6 +8,10 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" display a column at textwidth + 1
+set colorcolumn=+1
+highlight ColorColumn ctermbg=gray guibg=gray9
+
 set number " add line numbers
 set history=10000
 set hlsearch " highlight search
