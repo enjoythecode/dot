@@ -4,14 +4,6 @@
 
 - new TODO script to create a list of my TODO files?
 
-## Health (`./sh/health`)
-
-- health-home: check clutter in ~
-- check the installation of the tools that I want
-- call nvim checkhealth externally?
-- (stretch): record last output (.gitignored) and show diff?
-- check that SyncThing has synced my things!
-
 # Bash/Terminal
 
 - `r`; read README if exists
