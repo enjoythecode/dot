@@ -1,1 +1,4 @@
 - ftplugin; indent to 2 spaces in MD files, git commit message files
+- is my treesitter properly configured?
+- arrows: <nop>
+- spell check for git commit message and markdown files
