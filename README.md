@@ -9,12 +9,10 @@ source ~/.bashrc
 ```
 
 # Dependencies
-*list is very incomplete as of 2022-07-01*
-nvim
-lazygit
-ripgrep
-a "patched font", I use "Droid Sans Mono Nerd Font". see (nerd fonts)[https://www.nerdfonts.com/font-downloads], (installation instructions)[https://www.nerdfonts.com/font-downloads]
-z.sh (link)[https://raw.githubusercontent.com/rupa/z/master/z.sh]
+
+Run `sh/health/health.sh`
+
+You'll want to make sure that you have a "patched font", I use "Droid Sans Mono Nerd Font". see [nerd fonts](https://www.nerdfonts.com/font-downloads), [installation instructions](https://www.nerdfonts.com/font-downloads)
 
 ## OS X only
 `brew install coreutils` is required for gdate replacement to date

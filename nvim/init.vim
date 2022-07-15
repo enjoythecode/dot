@@ -8,6 +8,10 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" display a column at textwidth + 1
+set colorcolumn=+1
+highlight ColorColumn ctermbg=gray guibg=gray9
+
 set number " add line numbers
 set history=10000
 set hlsearch " highlight search
@@ -77,6 +81,7 @@ lua require("plugins")
 " let g:onedark_config = {'style': 'deep'}
 colorscheme onedark
 
+
 " make gf open the file if it doesn't exist (from :h gf)
 :map gf :e <cfile><CR>
 
@@ -86,6 +91,14 @@ let mapleader=' '
 " in colemak, but swap the up and right to make it right
 noremap j k
 noremap k j
+
+" More undo break points in insert mode
+" from https://github.com/jackfranklin/dotfiles/blob/master/nvim/maps.vim
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
 
 " git shortcuts
 nnoremap <leader>gs :!git status<CR>
@@ -154,3 +167,5 @@ nnoremap <leader>dd <cmd>cd ~/dot<CR>
 nnoremap <leader>dr <cmd>cd ~/dot/recipes<CR>
 nnoremap <leader>dh <cmd>cd ~<CR>
 
+" around file: all of file as a text object
+onoremap af :<C-u>normal! ggVG<CR>

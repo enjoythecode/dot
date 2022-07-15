@@ -1,16 +1,12 @@
 - move these sub-TODOs to relevant sub-folders, just link to those from here
 
+# Experiments
+
+- Try out https://github.com/LunarVim/LunarVim in a fresh environment
+
 # Scripts (`./sh`)
 
 - new TODO script to create a list of my TODO files?
-
-## Health (`./sh/health`)
-
-- health-home: check clutter in ~
-- check the installation of the tools that I want
-- call nvim checkhealth externally?
-- (stretch): record last output (.gitignored) and show diff?
-- check that SyncThing has synced my things!
 
 # Bash/Terminal
 
@@ -24,14 +20,15 @@
 
 # Editor/Nvim
 
+- Vim persistent undo
 - LSP
 	- Actually get this to working
+	- go through this: https://github.com/neovim/nvim-lspconfig
 	- Small self-help manual to help me to get it working for new systems/langs
 - testing setup?
 	- use quickfix properly?
 - tags, ltags, ctags... (understand them and see how I could use them)
 - Telescope: yank the current item (rather than opening it)
-- https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
 
 ## Packages
 - https://github.com/tpope/vim-commentary
@@ -42,5 +39,10 @@
 - https://github.com/lukas-reineke/indent-blankline.nvim
 - https://github.com/nvim-treesitter/nvim-treesitter
 - https://github.com/sirver/UltiSnips
-
+- https://github.com/christoomey/vim-sort-motion
+- https://github.com/michaeljsmith/vim-indent-object
+- https://github.com/michaeljsmith/vim-indent-object
+- https://github.com/vim-scripts/ReplaceWithRegister
 - sneak/hop
+- farmergreg/vim-lastplace
+- https://github.com/hrsh7th/nvim-cmp instead of coq/coc (?)
