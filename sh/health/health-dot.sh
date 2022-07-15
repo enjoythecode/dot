@@ -13,3 +13,7 @@ function check_command_exists() {
 }
 
 check_command_exists grep
+check_command_exists fzf
+check_command_exists nvim
+check_command_exists git
+check_command_exists python3
