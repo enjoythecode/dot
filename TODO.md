@@ -11,6 +11,7 @@
 
 # Bash/Terminal
 
+- have the "gm" (git checkout master) alias use the "default" branch automatically
 - `r`; read README if exists
 - script to point out out-of-place files (S/ToSort, Trash, ~/\*...)
 	- run on login?
