@@ -17,3 +17,4 @@ check_command_exists fzf
 check_command_exists nvim
 check_command_exists git
 check_command_exists python3
+check_command_exists dot  # graphviz: https://graphviz.org/download/
