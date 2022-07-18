@@ -32,6 +32,12 @@ function timer_stop {
     elif ((ms > 0)); then timer_show=${ms}.$((us / 100))ms
     else timer_show=${us}us
     fi
+	# if command runs for longer than 10 seconds, send a notification
+	# this has the added benefit of telling me how long I was in nvim for, which
+	# should be an interesting anecdote to collect and give me some mindfullness
+	# around how much time I spend...
+	if ((s >= 10)); then cs_send_notification "Your task just ended. That took $timer_show."
+	fi
     unset timer_start
 }
 
