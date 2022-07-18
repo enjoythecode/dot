@@ -195,3 +195,17 @@ function display_random_custom_bash_tip () {
 }
 export -f display_random_custom_bash_tip
 alias tip="display_random_custom_bash_tip"
+
+# Cross-Platform Notification
+# Currently is known to support: MacOS
+#
+# Parameters:
+# $* is the message text
+function cs_send_notification() {
+	if [[ $OSTYPE == 'darwin'* ]]; then
+		X="$*" /usr/bin/osascript -e 'display notification system attribute "X"'
+	else
+		echo "please edit ~/dot/bash/aliases_and_functions.bashrc:cs_send_notification to include support for your current platform"
+	fi
+}
+export -f cs_send_notification
