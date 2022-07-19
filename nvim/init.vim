@@ -72,6 +72,7 @@ Plug 'nvim-lualine/lualine.nvim'
 " Install dependencies with :COQdeps, and then :COQnow to start it
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Main COQ
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ COQ Snippets
+Plug 'christoomey/vim-sort-motion' " gs<motion> to sort a range
 call plug#end()
 
 let g:coq_settings = { 'auto_start': 'shut-up' }

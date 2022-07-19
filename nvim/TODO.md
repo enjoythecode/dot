@@ -22,7 +22,6 @@
 - https://github.com/lukas-reineke/indent-blankline.nvim
 - https://github.com/nvim-treesitter/nvim-treesitter
 - https://github.com/sirver/UltiSnips
-- https://github.com/christoomey/vim-sort-motion
 - https://github.com/michaeljsmith/vim-indent-object
 - https://github.com/michaeljsmith/vim-indent-object
 - https://github.com/vim-scripts/ReplaceWithRegister
