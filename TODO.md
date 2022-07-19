@@ -12,9 +12,6 @@
 # Bash/Terminal
 
 - have the "gm" (git checkout master) alias use the "default" branch automatically
-- `r`; read README if exists
-- script to point out out-of-place files (S/ToSort, Trash, ~/\*...)
-	- run on login?
 - prompt.bashrc; display environment
 - https://apple.stackexchange.com/questions/88515/how-do-i-edit-current-shell-command-in-vi
 - Bind up and down arrows to history search backward and forward
