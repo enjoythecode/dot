@@ -22,6 +22,7 @@ alias gb="git branch "
 alias all="gall"
 alias gall="git add ."
 alias g2="git push" # git "to"
+alias g2f="git push --force" # git "to" --force
 alias g4="git pull" # git "from"
 alias gm="git checkout master"
 alias gcm="git commit -m "
