@@ -11,5 +11,4 @@
 - (stretch): record last output (.gitignored) and show diff?
 
 - script to point out out-of-place files
-	- ToSort
 	- Trash
