@@ -148,7 +148,7 @@ export -f change_directory_to_previous_directory
 alias db="change_directory_to_previous_directory"
 
 function run_custom_health_check_scripts () {
-	~/dot/sh/health/health.sh
+	~/dot/health/health.sh
 }
 export -f run_custom_health_check_scripts
 alias h="run_custom_health_check_scripts"
