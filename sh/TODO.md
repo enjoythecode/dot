@@ -1,0 +1,1 @@
+- put ~/TODO.md inside sinany/docs and link in link.sh
