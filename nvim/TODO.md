@@ -5,6 +5,7 @@
 - Vim persistent undo
 - LSP
 	- Actually get this to working
+	- https://raygervais.dev/articles/2021/3/neovim-lsp/
 	- go through this: https://github.com/neovim/nvim-lspconfig
 	- Small self-help manual to help me to get it working for new systems/langs
 - testing setup?
@@ -12,6 +13,8 @@
 - tags, ltags, ctags... (understand them and see how I could use them)
 - Telescope: yank the current item (rather than opening it)
 - Try out https://github.com/LunarVim/LunarVim in a fresh environment
+- some general solution to handling multiple buffers (a personal solution for
+  all of my editing needs in general)
 
 ## Packages
 - https://github.com/tpope/vim-commentary
@@ -27,4 +30,5 @@
 - https://github.com/vim-scripts/ReplaceWithRegister
 - sneak/hop
 - farmergreg/vim-lastplace
+- https://github.com/ray-x/navigator.lua
 - https://github.com/hrsh7th/nvim-cmp instead of coq/coc (?)

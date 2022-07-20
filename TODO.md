@@ -1,0 +1,1 @@
+- Global git commit precommit if committing TODO to the code

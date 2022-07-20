@@ -6,9 +6,15 @@
 - health-home
   - check clutter in ~
 
+- health-bean
+  - make check
+  - make todo
+
 - check that SyncThing has synced my things!
 
 - (stretch): record last output (.gitignored) and show diff?
 
 - script to point out out-of-place files
 	- Trash
+
+- default to not printing the lines with "[OK]"
