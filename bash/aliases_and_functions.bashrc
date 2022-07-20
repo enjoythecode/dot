@@ -60,7 +60,7 @@ alias ev="$EDITOR ~/.config/nvim/init.vim"
 alias r="$EDITOR ./README.md"
 alias t="$EDITOR ./TODO.md"
 alias th="$EDITOR ~/TODO.md"
-alias k="$EDITOR ~/S/Zettelkasten/Home.md"
+alias k="cd ~/S/Zettelkasten && $EDITOR Home.md"
 
 # "L"ist
 alias lh="ls -la ~"

@@ -7,5 +7,4 @@
 - https://apple.stackexchange.com/questions/88515/how-do-i-edit-current-shell-command-in-vi
 - Bind up and down arrows to history search backward and forward
 - Tmux / alacrity?
-- k: cd first
 - function to create shortened strings (ie k8s, o12n, t7t)
