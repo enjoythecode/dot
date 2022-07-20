@@ -74,9 +74,17 @@ set_prompt () {
     else
         PS1+="$Green\\u@\\h "
     fi
-    # Print the working directory and prompt marker in blue, and reset
-    # the text color to the default.
-    PS1+="$Blue\\w \\\$$Reset "
+
+    # Print the working directory and prompt marker in blue
+    PS1+="$Blue\\w "
+
+	# Print the git branch, if exists, in white
+	branch=$(git branch --show-current 2>/dev/null)
+	if [[ -n $branch ]]; then
+		PS1+="$White($branch) "
+	fi
+	# Reset the text color to the default.
+	PS1+="$Blue\\\$$Reset "
 }
 
 trap 'timer_start' DEBUG
