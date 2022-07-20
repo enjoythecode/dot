@@ -16,6 +16,7 @@ alias mv="mv -i" # confirm before overwriting, silently works otherwise
 alias o="open"
 
 # "G"it
+alias g="git" # for custom commands
 alias gs="git status"
 alias ga="git add "
 alias gb="git branch "
