@@ -43,13 +43,19 @@ what is available for you to do;
 repository)[github.com/enjoythecode/dot/]
 
 `S/` holds most of your non-code personal files that you care about;
+- `S/Current` holds `Archive`-flavored (see next item) folders relating to
+  themes that are ongoing
 - `S/Archive/` with its many sub-folders for categorizing your filer
 - `S/Zettelkasten` holds your personal flavor of Zettelkasten that is most
   commonly associated with the Obsidian text editor in your head.
-- some others here, mind putting those here sometime, please? TODO
+- `S/Projects` holds only seed-size projects that have a low chance of survival
+  (see `Projects.git` for projects proper)
+- `S/beans` is where your personal finance lives; tracked with beancount
+- `S/src` has some files to deal with my files, and `S/Makefile` is the entry
+  point
 
 `Projects.git` holds your code files that are synced with git; you'll find many
-project here.
+projects here.
 
 TODO what else might I have?
 TODO what about the other stuff? Do I not care about it, then?
@@ -68,5 +74,7 @@ TODO where do I learn more about operating these insurances?
 
 # Staying a While?
 
-TODO directions on where to learn more about the system, what checks can be
-performed, etc.
+Most directories will have their own `README.md` and `TODO.md`. Opening these in
+`$EDITOR` is currently aliased to `r` and `t`, respectively.
+
+Try running `h` to run health checks on the system overall.
