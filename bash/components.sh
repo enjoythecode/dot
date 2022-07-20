@@ -5,7 +5,7 @@ function source_file_if_exists () {
 }
 
 DOT_BASH=$HOME/dot/bash
-for component in exports.bashrc aliases_and_functions.bashrc configuration.bashrc prompt.bashrc scripts/z.sh
+for component in exports.sh aliases_and_functions.sh configuration.sh prompt.sh scripts/z.sh
 do
     source_file_if_exists $DOT_BASH/$component
 done
