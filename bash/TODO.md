@@ -1,3 +1,5 @@
+- `z?=z ?` aliases where ? is every letter in the alphabet (fast access to
+  one-letter access for z.sh)
 - fix source-once to be in the injection from link.sh rather than in the sourced
   file (otherwise, some new terminals can't source my bashrc whereas they should
   be able to...)

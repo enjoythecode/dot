@@ -30,6 +30,7 @@ alias gcm="git commit -m "
 alias gca="git commit --amend"
 alias gd="git diff "
 alias gds="git diff --staged "
+alias grv="git remote -v"
 alias gc="git checkout "
 alias gl="git log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
 function git_add_all_commit () {
