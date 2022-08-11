@@ -4,7 +4,7 @@ require'nvim-treesitter.configs'.setup {
 }
 require("nvim-lsp-installer").setup {automatic_installation = true}
 require("toggleterm").setup()
-require('lualine').setup {
+require("lualine").setup {
 	options = { theme = 'onedark' }
 }
 -- require("lspconfig").pyright.setup {}
