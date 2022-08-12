@@ -48,7 +48,7 @@ alias mt="make test"
 
 # "S"ource
 alias sv=". venv/bin/activate"
-alias sb=". ~/.bashrc"
+alias sb=". ~/dot/bash/components.sh"
 
 # "E"dit
 alias e="$EDITOR"
