@@ -73,6 +73,34 @@ alias golden='mvn -DgoldenFilesPrefix="$PWD"/tool/src/test/resources/org/datacom
 
 alias dimp='java -jar ~/import/tool/target/datacommons-import-tool-0.1-alpha.1-jar-with-dependencies.jar'
 
+# One letter shortcuts for z.sh
+alias za="z a"
+alias zb="z b"
+alias zc="z c"
+alias zd="z d"
+alias ze="z e"
+alias zf="z f"
+alias zg="z g"
+alias zh="z h"
+alias zi="z i"
+alias zj="z j"
+alias zk="z k"
+alias zl="z l"
+alias zm="z m"
+alias zn="z n"
+alias zo="z o"
+alias zp="z p"
+alias zq="z q"
+alias zr="z r"
+alias zs="z s"
+alias zt="z t"
+alias zu="z u"
+alias zv="z v"
+alias zw="z w"
+alias zx="z x"
+alias zy="z y"
+alias zz="z z"
+
 # Functions
 
 function list_available_functions () {
