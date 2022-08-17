@@ -152,6 +152,8 @@ nnoremap <leader>rp :!python3 %<cr>
 nnoremap <leader>rl :@:<cr>
 " Run Bang (command)
 nnoremap <leader>rb :!
+" Run LaTeX (compile)
+nnoremap <leader>rx :!pdflatex %<cr>
 
 " Clear search results
 nnoremap <leader>c :noh<cr>
