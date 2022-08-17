@@ -241,3 +241,11 @@ function cs_send_notification() {
 	fi
 }
 export -f cs_send_notification
+
+# Removes trailing whitespace for all files in a git repository
+# Skips binary files using the git "-I" flag
+# Source: https://stackoverflow.com/a/10120431
+function delete_trailing_space_in_git_repo() {
+	git grep -I --name-only -z -e '' | xargs -0 sed -i 's/[ \t]\+\(\r\?\)$/\1/'
+}
+export -f delete_trailing_space_in_git_repo
