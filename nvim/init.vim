@@ -73,6 +73,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Main COQ
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ COQ Snippets
 Plug 'christoomey/vim-sort-motion' " gs<motion> to sort a range
+Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
 
 let g:coq_settings = { 'auto_start': 'shut-up' }
