@@ -71,6 +71,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 " Install dependencies with :COQdeps, and then :COQnow to start it
 Plug 'christoomey/vim-sort-motion' " gs<motion> to sort a range
+Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
 
 let g:coq_settings = { 'auto_start': 'shut-up' }
@@ -150,6 +151,8 @@ nnoremap <leader>rp :!python3 %<cr>
 nnoremap <leader>rl :@:<cr>
 " Run Bang (command)
 nnoremap <leader>rb :!
+" Run LaTeX (compile)
+nnoremap <leader>rx :!pdflatex %<cr>
 " Run Golang
 nnoremap <leader>rg :!go run %<cr>
 

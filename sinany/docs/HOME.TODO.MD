@@ -3,6 +3,7 @@
 - create environment variables for the important paths in my personal computing
   setup and have my scripts use that instead of hard-coding the values.
 - document the role of TODO.md files in ~/README.md
+- a command line interface to working with TODO.md files? interesting...
 
 # Hard to Categorize
 

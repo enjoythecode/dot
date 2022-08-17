@@ -1,0 +1,5 @@
+# Cleaning Docker storage:
+- wipe out all docker containers: `docker rm $(docker ps -a -q)`
+  - lighter alternative; wipe exited containers: `docker rm $(docker ps -q -f status=exited) `
+- wipe all images: `docker rmi $(docker images -q)`
+  - lighter alternative; wipe dangling images: `docker rmi $(docker images -f "dangling=true" -q)`
