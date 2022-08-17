@@ -70,8 +70,6 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 " Install dependencies with :COQdeps, and then :COQnow to start it
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Main COQ
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ COQ Snippets
 Plug 'christoomey/vim-sort-motion' " gs<motion> to sort a range
 Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
@@ -155,6 +153,8 @@ nnoremap <leader>rl :@:<cr>
 nnoremap <leader>rb :!
 " Run LaTeX (compile)
 nnoremap <leader>rx :!pdflatex %<cr>
+" Run Golang
+nnoremap <leader>rg :!go run %<cr>
 
 " Clear search results
 nnoremap <leader>c :noh<cr>
