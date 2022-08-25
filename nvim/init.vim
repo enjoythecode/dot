@@ -128,7 +128,7 @@ nnoremap <leader>th <cmd>Telescope help_tags<cr>
 nnoremap <leader>tc <cmd>Telescope commands<cr>
 
 " Open new file (in split)
-nnoremap <leader>on :vnew<CR>
+nnoremap <leader>on :enew<CR>
 " Open Daily Note
 nnoremap <leader>od :edit `sh/open_daily_note.sh`<CR>
 " Open Scratch
