@@ -54,17 +54,17 @@ alias sb=". ~/dot/bash/components.sh"
 
 # "E"dit
 alias e="$EDITOR"
-alias eb="$EDITOR ~/.bashrc"
-alias eba="$EDITOR ~/dot/bash/aliases_and_functions.sh"
+alias eb="$EDITOR $S_PATH_BASHRC"
+alias eba="$EDITOR $S_PATH_BASH_ALIASES"
 alias ebe="$EDITOR ~/dot/bash/exports.sh"
 alias ebp="$EDITOR ~/dot/bash/prompt.sh"
 alias ebcfg="$EDITOR ~/dot/bash/configuration.sh"
 alias ebc="$EDITOR ~/dot/bash/components.sh"
-alias ev="$EDITOR ~/.config/nvim/init.vim"
+alias ev="$EDITOR $S_PATH_VIMRC"
 alias r="$EDITOR ./README.md"
 alias t="$EDITOR ./TODO.md"
 alias th="$EDITOR ~/TODO.md"
-alias k="cd ~/S/Zettelkasten && $EDITOR Home.md"
+alias k="cd $S_PATH_WIKI && $EDITOR Home.md"
 
 # "L"ist
 alias lh="ls -la ~"
