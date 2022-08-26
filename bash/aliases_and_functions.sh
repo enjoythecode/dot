@@ -34,6 +34,7 @@ alias gd="git diff "
 alias gds="git diff --staged "
 alias grv="git remote -v"
 alias gc="git checkout "
+alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
 alias gl="git log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
 function git_add_all_commit () {
     git status
@@ -65,15 +66,6 @@ alias r="$EDITOR ./README.md"
 alias t="$EDITOR ./TODO.md"
 alias th="$EDITOR ~/TODO.md"
 alias k="cd $S_PATH_WIKI && $EDITOR Home.md"
-
-# "L"ist
-alias lh="ls -la ~"
-
-# Misc.
-alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
-alias golden='mvn -DgoldenFilesPrefix="$PWD"/tool/src/test/resources/org/datacommons/tool package'
-
-alias dimp='java -jar ~/import/tool/target/datacommons-import-tool-0.1-alpha.1-jar-with-dependencies.jar'
 
 # One letter shortcuts for z.sh
 alias za="z a"
