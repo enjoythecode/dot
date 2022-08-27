@@ -65,7 +65,7 @@ alias ev="$EDITOR $S_PATH_VIMRC"
 alias r="$EDITOR ./README.md"
 alias t="$EDITOR ./TODO.md"
 alias th="$EDITOR ~/TODO.md"
-alias k="cd $S_PATH_WIKI && $EDITOR Home.md"
+alias k="cd $S_PATH_WIKI && $EDITOR"
 
 # One letter shortcuts for z.sh
 alias za="z a"
