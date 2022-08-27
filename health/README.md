@@ -19,4 +19,3 @@ is separated for a space character.
 
 `[OK]` means the test was OK.
 `[!!]` indicates a test that failed.
-`[AC]` lines communicate action items to solve test issues.
