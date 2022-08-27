@@ -16,5 +16,3 @@
 
 - script to point out out-of-place files
 	- Trash
-
-- default to not printing the lines with "[OK]"

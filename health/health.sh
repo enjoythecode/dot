@@ -1,3 +1,3 @@
-~/dot/health/health-dot.sh
-~/dot/health/health-s.sh
-~/dot/health/health-syncthing.sh
+~/dot/health/health-dot.sh | grep "^\[!!\]"
+~/dot/health/health-s.sh | grep "^\[!!\]"
+~/dot/health/health-syncthing.sh | grep "^\[!!\]"
