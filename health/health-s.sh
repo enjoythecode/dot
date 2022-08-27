@@ -1,8 +1,4 @@
-if [ "$(ls -A ~/S/Archive/ToSort/)" ]; then
-	for file in ~/S/Archive/ToSort/*
-	do
-		echo "[!!] Unsorted file in ~/S/Archive/ToSort$file"
-	done
-else
-	echo "[OK] All files in ~/S/Archive/ToSort have been sorted away."
-fi
+find "$S_PATH_TOSORT" -type f \( ! -iname ".DS_Store" \) |
+while IFS= read -r line;do
+	echo "[!!] Unsorted file at $line"
+done
