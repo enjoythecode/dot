@@ -66,6 +66,7 @@ alias r="$EDITOR ./README.md"
 alias t="$EDITOR ./TODO.md"
 alias th="$EDITOR ~/TODO.md"
 alias k="cd $S_PATH_WIKI && $EDITOR"
+alias size="du -hs * | sort -rh"
 
 # One letter shortcuts for z.sh
 alias za="z a"
