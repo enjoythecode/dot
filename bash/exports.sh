@@ -20,7 +20,7 @@ export CUSTOM_BASHRC_SOURCED="true"
 # Source: https://stackoverflow.com/questions/60922620/shell-script-to-check-if-running-in-windows-when-using-wsl
 if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ];
 then
-	export S_PATH_HOME="/mnt/c/Users/sinan/"
+	export S_PATH_HOME="/mnt/c/Users/sinan"
 else
 	export S_PATH_HOME="$HOME"
 fi
