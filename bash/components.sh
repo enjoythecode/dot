@@ -10,3 +10,7 @@ do
     source_file_if_exists $DOT_BASH/$component
 done
 
+if [ -f ~/dot/sh/.git-completion.bash ]; then
+  . ~/dot/sh/.git-completion.bash
+fi
+
