@@ -8,6 +8,8 @@ source ~/.bashrc
 # hack away; e(dit), l(s), c(lear) (c)d,...
 ```
 
+Note that dot assumes that it is in the path `~/dot`
+
 # Dependencies
 
 Run `health/health.sh` (should be aliased to `h`)

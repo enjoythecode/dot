@@ -12,3 +12,7 @@ do
 	source_file_if_exists $SCRIPT_DIR/$component
 done
 
+if [ -f ~/dot/sh/.git-completion.bash ]; then
+  . ~/dot/sh/.git-completion.bash
+fi
+
