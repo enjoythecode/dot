@@ -38,3 +38,13 @@ export S_PATH_DOT="$S_PATH_HOME/dot"
 export S_PATH_WIKI="$S_PATH_S/Zettelkasten"
 export S_PATH_VIMRC="$S_PATH_DOT/nvim/init.vim"
 export S_PATH_BASH_ALIASES="$S_PATH_DOT/bash/aliases_and_functions.sh"
+
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+
+# Currently, only correct for Mac!
+export FACTORIO_PATH="$HOME/Library/Application Support/factorio"
