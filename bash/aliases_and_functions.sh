@@ -67,6 +67,7 @@ alias t="$EDITOR ./TODO.md"
 alias th="$EDITOR ~/TODO.md"
 alias k="cd $S_PATH_WIKI && $EDITOR"
 alias size="du -hs * | sort -rh"
+alias st="python3 -m webbrowser 'localhost:8384'"
 
 # One letter shortcuts for z.sh
 alias za="z a"
