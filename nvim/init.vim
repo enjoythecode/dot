@@ -79,7 +79,7 @@ let g:coq_settings = { 'auto_start': 'shut-up' }
 lua require("plugins")
 
 " let g:onedark_config = {'style': 'deep'}
-colorscheme onedark
+colorscheme carbonfox
 
 
 " make gf open the file if it doesn't exist (from :h gf)
@@ -145,7 +145,10 @@ nnoremap <leader>a <cmd>ToggleTerm direction=float<CR>
 " Source Vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Run Python 3
+" Makefile test
+nnoremap <leader>mt :!make test<cr>
+
+"" Run Python 3
 nnoremap <leader>rp :!python3 %<cr>
 " Run Last (executed command)
 nnoremap <leader>rl :@:<cr>
