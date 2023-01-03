@@ -176,7 +176,7 @@ export -f change_directory_to_previous_directory
 alias db="change_directory_to_previous_directory"
 
 function run_custom_health_check_scripts () {
-	~/dot/health/health.sh
+	$S_PATH_DOT/health/health.sh
 }
 export -f run_custom_health_check_scripts
 alias h="run_custom_health_check_scripts"
@@ -245,3 +245,8 @@ function delete_trailing_space_in_git_repo() {
 	git grep -I --name-only -z -e '' | xargs -0 sed -i 's/[ \t]\+\(\r\?\)$/\1/'
 }
 export -f delete_trailing_space_in_git_repo
+
+function delete_all_empty_files_in_wd() {
+	find . -type f -empty -print -delete
+}
+export -f delete_all_empty_files_in_wd

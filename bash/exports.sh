@@ -5,13 +5,13 @@ else
     export EDITOR="vim"
 fi
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
-export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.7/bin # eventually obsolete
-export PATH=$PATH:/usr/local/share/dotnet # what is this?
-export PATH=$PATH:/Users/sinany/bin
-export PATH=$PATH:~/apache/apache-maven-3.8.5/bin # apache should probably not be in ~, but who am i to say?
+export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.7/bin" #eventually obsolete
+export PATH="$PATH:/usr/local/share/dotnet" # what is this?
+export PATH="$PATH:/Users/sinany/bin"
+export PATH="$PATH:~/apache/apache-maven-3.8.5/bin" # apache should probably not be in ~, but who am i to say?
 
 export CUSTOM_BASHRC_SOURCED="true"
 
@@ -20,7 +20,7 @@ export CUSTOM_BASHRC_SOURCED="true"
 # Source: https://stackoverflow.com/questions/60922620/shell-script-to-check-if-running-in-windows-when-using-wsl
 if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ];
 then
-	export S_PATH_HOME="/mnt/c/Users/sinan/"
+	export S_PATH_HOME="/mnt/c/Users/sinan"
 else
 	export S_PATH_HOME="$HOME"
 fi
