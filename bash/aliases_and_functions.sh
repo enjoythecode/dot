@@ -71,8 +71,8 @@ alias size="du -hs * | sort -rh"
 alias st="python3 -m webbrowser 'localhost:8384'"
 
 # "J"upyter "N"otebook
-alias jb="jupyter notebook"
-alias jbnb="jupyter notebook --no-browser"
+alias jn="jupyter notebook"
+alias jnnb="jupyter notebook --no-browser"
 
 # One letter shortcuts for z.sh
 alias za="z a"
