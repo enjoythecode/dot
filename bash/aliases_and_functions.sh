@@ -14,6 +14,7 @@ alias s="git status" # left middle finger on Colemak
 alias c="clear"
 alias mv="mv -i" # confirm before overwriting, silently works otherwise
 alias o="open"
+alias cs="clear && git status" # i use this a lot!
 
 # "G"it
 alias g="git" # for custom commands
