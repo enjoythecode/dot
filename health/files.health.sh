@@ -12,13 +12,13 @@ function replace_home_string_with_tilda(){
 }
 
 
-find "$S_PATH_TOSORT" -depth 1 \( ! -iname ".DS_Store" \) |
-while IFS= read -r line;do
-	linef=$(replace_home_string_with_tilda $line)
-	echo "[!!] Unsorted folder/file at ${linef}"
-done
+num_unsorted_files="$(find "$S_PATH_TOSORT" | wc -l)"
+# TODO: print [OK] message if no unsorted files
+echo "[!!] There are $num_unsorted_files unsorted files. Suggestion: go through the files in $S_PATH_TOSORT"
 
 if [[ $OSTYPE == 'darwin'* ]]; then
+
+	echo "2"
 	find "$HOME/Downloads" -depth 1 \( ! -iname ".DS_Store" \) |
 	while IFS= read -r line;do
 		linef=$(replace_home_string_with_tilda $line)
