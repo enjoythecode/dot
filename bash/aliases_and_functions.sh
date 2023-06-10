@@ -52,7 +52,7 @@ alias mt="make test"
 
 # "S"ource
 alias sv=". venv/bin/activate"
-alias sb=". ~/dot/bash/components.sh"
+alias sb=". $S_PATH_DOT/bash/components.sh"
 
 # "E"dit
 alias e="$EDITOR"
@@ -185,6 +185,13 @@ function run_custom_health_check_scripts () {
 }
 export -f run_custom_health_check_scripts
 alias h="run_custom_health_check_scripts"
+
+function run_health_and_info () {
+	run_custom_health_check_scripts
+	python3 "$S_PATH_DOT/health/info.py"
+}
+export -f run_health_and_info
+alias i="run_health_and_info "
 
 # Parameters
 # $1 is minimum
