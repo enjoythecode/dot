@@ -188,7 +188,7 @@ alias h="run_custom_health_check_scripts"
 
 function run_health_and_info () {
 	run_custom_health_check_scripts
-	python3 "$S_PATH_DOT/health/info.py"
+	python3 "$S_PATH_DOT/sh/info.py"
 }
 export -f run_health_and_info
 alias i="run_health_and_info "
