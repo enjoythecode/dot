@@ -18,8 +18,9 @@ echo "[!!] There are $num_unsorted_files unsorted files. Suggestion: go through 
 
 if [[ $OSTYPE == 'darwin'* ]]; then
 
-	echo "2"
-	find "$HOME/Downloads" -depth 1 \( ! -iname ".DS_Store" \) |
+	downloads_path="$HOME/Downloads"
+	num_unsorted_downloads="$(find "$downloads_path" -depth 1 \( ! -iname ".DS_Store" \) | wc -l)"
+	echo "[!!] There are $num_unsorted_downloads unsorted downloads. Suggestion: go through the files in $downloads_path"
 	while IFS= read -r line;do
 		linef=$(replace_home_string_with_tilda $line)
 		echo "[!!] Unsorted download file/folder at $linef"
