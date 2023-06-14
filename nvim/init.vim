@@ -158,6 +158,8 @@ nnoremap <leader>rb :!
 nnoremap <leader>rx :!pdflatex %<cr>
 " Run Golang
 nnoremap <leader>rg :!go run %<cr>
+" Run Bash
+nnoremap <leader>rs :!./%<cr>
 
 " Clear search results
 nnoremap <leader>c :noh<cr>
