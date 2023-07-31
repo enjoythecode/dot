@@ -1,1 +1,4 @@
 - Global git commit precommit if committing TODO to the code
+- open RANDOM for vim
+- terminal prompt indicator for README/TODO existing
+- markdown shortcuts (such as ctrl-i for inserting ** (italics)) in insert mode
