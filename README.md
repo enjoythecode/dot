@@ -3,7 +3,7 @@
 (this is work-in-progress)
 
 ```
-eval `ssh-agent` # On Windows only 
+eval `ssh-agent` # On Windows only (?)
 ssh-add ~/.ssh/id_rsa
 vagrant up
 vagrant ssh
