@@ -13,7 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # ssh-add -L
   #
 
-  config.ssh.private_key_path = ["~/.ssh/id_rsa", "~/.vagrant.d/insecure_private_key"]
+  #config.vm.network "private_network", ip: "10.10.10.10" 
+
   config.ssh.forward_agent = true
 
   config.vm.provider "virtualbox" do |vb|
@@ -23,6 +24,36 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # config.vm.synced_folder "~/.m2", "/home/vagrant/.m2"
+
+  config.vm.provision "shell" do |s|
+    ssh_prv_key = ""
+    ssh_pub_key = ""
+    if File.file?("#{Dir.home}/.ssh/id_rsa")
+      ssh_prv_key = File.read("#{Dir.home}/.ssh/id_rsa")
+      ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
+    else
+      puts "No SSH key found. You will need to remedy this before pushing to the repository."
+    end
+    s.inline = <<-SHELL
+      if grep -sq "#{ssh_pub_key}" /home/vagrant/.ssh/authorized_keys; then
+        echo "SSH keys already provisioned."
+        exit 0;
+      fi
+      echo "SSH key provisioning."
+      mkdir -p /home/vagrant/.ssh/
+      touch /home/vagrant/.ssh/authorized_keys
+      echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
+      echo #{ssh_pub_key} > /home/vagrant/.ssh/id_rsa.pub
+      chmod 644 /home/vagrant/.ssh/id_rsa.pub
+      echo "#{ssh_prv_key}" > /home/vagrant/.ssh/id_rsa
+      chmod 600 /home/vagrant/.ssh/id_rsa
+      chown -R vagrant:vagrant /home/vagrant
+      exit 0
+    SHELL
+  end
+
+  #config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/user.pub"
+  #config.vm.provision "shell", inline: "cat '/home/vagrant/.ssh/user.pub' >> '/home/vagrant/.ssh/authorized_keys'"
 
   config.vm.provision :shell, path: "vagrant_provision.sh"
 end

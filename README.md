@@ -1,4 +1,17 @@
+# New Quick Start (Reproducible `sip` using Vagrant)
+
+(this is work-in-progress)
+
+```
+eval `ssh-agent` # On Windows only 
+ssh-add ~/.ssh/id_rsa
+vagrant up
+vagrant ssh
+# hack away...
+```
+
 # Quick Start
+
 ```
 cd ~
 git clone https://github.com/enjoythecode/dot.git
