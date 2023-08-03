@@ -22,8 +22,6 @@ if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ];
 then
 	export S_PATH_HOME="/mnt/c/Users/sinan"
 else
-	export GOPATH="${HOME}/.go"
-	export GOROOT="$(brew --prefix golang)/libexec"
 	export S_PATH_HOME="$HOME"
 fi
 

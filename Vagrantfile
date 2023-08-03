@@ -55,5 +55,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/user.pub"
   #config.vm.provision "shell", inline: "cat '/home/vagrant/.ssh/user.pub' >> '/home/vagrant/.ssh/authorized_keys'"
 
-  config.vm.provision :shell, path: "vagrant_provision.sh"
+  config.vm.provision :shell, path: "vagrant_provision.sh", privileged: false
 end
