@@ -41,8 +41,5 @@ export S_PATH_BASH_ALIASES="$S_PATH_DOT/bash/aliases_and_functions.sh"
 
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
-test -d "${GOPATH}" || mkdir "${GOPATH}"
-test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
-
 # Currently, only correct for Mac!
 export FACTORIO_PATH="$HOME/Library/Application Support/factorio"

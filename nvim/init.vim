@@ -59,7 +59,6 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'EdenEast/nightfox.nvim' " theme
-Plug 'navarasu/onedark.nvim' " theme
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 Plug 'williamboman/nvim-lsp-installer'
