@@ -1,3 +1,5 @@
+- vim completion for .beancount
+- vim syntax highlighting for .beancount
 - Global git commit precommit if committing TODO to the code
 - open RANDOM for vim
 - terminal prompt indicator for README/TODO existing
