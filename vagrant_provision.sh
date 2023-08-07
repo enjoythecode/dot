@@ -1,6 +1,7 @@
 sudo dnf install -y neovim python3-neovim
 sudo dnf install -y ripgrep
 sudo dnf install -y fzf
+sudo dnf install -y python3-pip
 git clone https://github.com/enjoythecode/dot.git /home/vagrant/dot
 mkdir /home/vagrant/.config
 ln -s /home/vagrant/dot/nvim /home/vagrant/.config/nvim

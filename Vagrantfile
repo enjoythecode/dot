@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.cpus = 4
   end
 
-  # config.vm.synced_folder "~/.m2", "/home/vagrant/.m2"
+  config.vm.synced_folder "~/S", "/home/vagrant/S", create: true
 
   config.vm.provision "shell" do |s|
     ssh_prv_key = ""
