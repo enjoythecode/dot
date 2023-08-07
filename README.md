@@ -1,43 +1,49 @@
-# New Quick Start (Reproducible `sip` using Vagrant)
+# Quick Start (Reproducible environments using Vagrant)
 
 (this is work-in-progress)
 
+(only on Windows;)
 ```
 eval `ssh-agent` # On Windows only (?)
 ssh-add ~/.ssh/id_rsa
+```
+
+Then;
+```
 vagrant up
 vagrant ssh
 # hack away...
 ```
 
-# Quick Start
+# Required Software for the Thin-client to Vagrant
 
-```
-cd ~
-git clone https://github.com/enjoythecode/dot.git
-./dot/sh/link.sh
-source ~/.bashrc
+Needed software:
 
-# hack away; e(dit), l(s), c(lear) (c)d,...
-```
+## Virtualbox
+https://www.virtualbox.org/wiki/Linux_Downloads
 
-Note that dot assumes that it is in the path `~/dot`
+## Vagrant
 
-# Dependencies
+https://developer.hashicorp.com/vagrant/downloads
 
-Run `health/health.sh` (should be aliased to `h`)
+## Syncthing
 
-You'll want to make sure that you have a "patched font", I use "Droid Sans Mono Nerd Font". see [nerd fonts](https://www.nerdfonts.com/font-downloads), [installation instructions](https://www.nerdfonts.com/font-downloads)
+https://apt.syncthing.net/
+
+## Nerd Fonts
+
+https://github.com/ryanoasis/nerd-fonts
+
+(use shallow clone from step 5, and then install script from step 3)
 
 ## OS X only
 `brew install coreutils` is required for gdate replacement to date
 
 # Resources
 
-use `sh/link.sh` to create links for the necessary `.*rc` files.
-
 see `bash/aliases_and_functions.bashrc` for a list of aliases.
 
 # Words
-My setup. Efficiency of keystrokes (less friction) and portability (low high-tail friction)
-are priorities.
+
+My setup. Efficiency of keystrokes (less friction) and portability (low
+high-tail friction) are priorities.
