@@ -10,8 +10,8 @@ mkdir /home/vagrant/.bashrc.d
 ln -s /home/vagrant/dot/bash /home/vagrant/.bashrc.d/entry.sh
 
 git config pull.rebase true
-su vagrant "git config --global user.email \"sinan.yumurtaci@gmail.com\""
-su vagrant "git config --global user.name \"Sinan Yumurtacı\""
+git config --global user.email "sinan.yumurtaci@gmail.com"
+git config --global user.name "Sinan Yumurtacı"
 
 python3 -m pip install neovim
 # this one does not yet work, for some reason...
