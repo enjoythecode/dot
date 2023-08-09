@@ -24,17 +24,16 @@ set dictionary+=/usr/share/dict/words
 set scrolloff=9 " keep the current line towards the center
 set textwidth=80
 
-"Allow backspacing over everything in insert mode.
-set backspace=indent,eol,start
+
+set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
 set showcmd			" display incomplete commands
 set ttimeout		" time out for key codes
-set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 
 set path+=** " enable searching subdirectiories recursively
 set wildmenu " show tab completion in the command line for any command!
 
-" for sindrets/diffview.nvim
-set fillchars+=diff:╱
+
+set fillchars+=diff:╱ " for sindrets/diffview.nvim
 
 " use tabs for indentation and do not expand it to spaces. tabs are shown
 " to be 4 characters wide.
@@ -98,7 +97,6 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
-
 " git shortcuts
 nnoremap <leader>gs :!git status<CR>
 nnoremap <leader>gc :!git commit -m "
@@ -126,20 +124,23 @@ nnoremap <leader>tb <cmd>Telescope buffers<cr>
 nnoremap <leader>th <cmd>Telescope help_tags<cr>
 nnoremap <leader>tc <cmd>Telescope commands<cr>
 
-" Open new file (in split)
+" Open New file
 nnoremap <leader>on :enew<CR>
 " Open Daily Note
 nnoremap <leader>od :edit `sh/open_daily_note.sh`<CR>
 " Open Scratch
 nnoremap <leader>os :edit ~/scratch.txt<cr>
-" Open my .vimrc
+" Open my .Vimrc
 nnoremap <leader>ov :edit $MYVIMRC<cr>
-" Open lua/plugins.lua
+" Open lua/Plugins.lua
 nnoremap <leader>op :edit ~/.config/nvim/lua/plugins.lua<cr>
-" Open alternate file (usually, the previous file)
+" Open Alternate file (usually, the previous file)
 nnoremap <leader>oa :edit #<cr>
+
 " toggle the terminAl (floating)
 nnoremap <leader>a <cmd>ToggleTerm direction=float<CR>
+" Terminal Quit Using <Esc>
+:tnoremap <Esc> <C-\><C-n>
 
 " Source Vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -163,14 +164,12 @@ nnoremap <leader>rs :!./%<cr>
 " Clear search results
 nnoremap <leader>c :noh<cr>
 
-" Terminal Quit Using <Esc>
-:tnoremap <Esc> <C-\><C-n>
-
 " diffView
 nnoremap <leader>vo <cmd>DiffviewOpen<CR>
 nnoremap <leader>vq <cmd>DiffviewClose<CR>
 nnoremap <leader>vh <cmd>DiffviewFileHistory<CR>
 
+" cD into places
 nnoremap <leader>dd <cmd>cd ~/dot<CR>
 nnoremap <leader>dr <cmd>cd ~/dot/recipes<CR>
 nnoremap <leader>dh <cmd>cd ~<CR>
