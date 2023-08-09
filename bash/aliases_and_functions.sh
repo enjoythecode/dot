@@ -57,6 +57,10 @@ alias th="$EDITOR ~/TODO.md"
 alias size="du -hs * | sort -rh"
 alias st="python3 -m webbrowser 'localhost:8384'"
 
+# "D"irectory
+alias dh="cd $HOME"
+alias doh="cd $S_PATH_DOT"
+
 # "J"upyter "N"otebook
 alias jn="jupyter notebook"
 alias jnnb="jupyter notebook --no-browser"
