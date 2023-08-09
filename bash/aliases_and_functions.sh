@@ -59,7 +59,7 @@ alias st="python3 -m webbrowser 'localhost:8384'"
 
 # "D"irectory
 alias dh="cd $HOME"
-alias doh="cd $S_PATH_DOT"
+alias dot="cd $S_PATH_DOT"
 
 # "J"upyter "N"otebook
 alias jn="jupyter notebook"

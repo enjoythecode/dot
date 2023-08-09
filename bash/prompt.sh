@@ -36,7 +36,7 @@ set_prompt () {
 	fi
 
 	# Git stuff placeholder
-	PS1+=" TODO "
+	PS1+="$Blue TODO "
 
 	# Reset the text color to the default.
 	PS1+="$Blue\\\$$Reset "
