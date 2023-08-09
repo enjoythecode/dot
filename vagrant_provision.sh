@@ -6,7 +6,8 @@ sudo dnf install -y python3-pip
 git clone https://github.com/enjoythecode/dot.git /home/vagrant/dot
 mkdir /home/vagrant/.config
 ln -s /home/vagrant/dot/nvim /home/vagrant/.config/nvim
-ln -s /home/vagrant/dot/bash /home/vagrant/.bashrc.d
+mkdir /home/vagrant/.bashrc.d
+ln -s /home/vagrant/dot/bash /home/vagrant/.bashrc.d/entry.sh
 
 git config pull.rebase true
 git config --global user.email "sinan.yumurtaci@gmail.com"
