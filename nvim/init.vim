@@ -152,14 +152,14 @@ nnoremap <leader>mt :!make test<cr>
 nnoremap <leader>rp :!python3 %<cr>
 " Run Last (executed command)
 nnoremap <leader>rl :@:<cr>
-" Run Bang (command)
-nnoremap <leader>rb :!
+" Run in Shell # this is more ergonomic than rb (run-bang)
+nnoremap <leader>rs :!
 " Run LaTeX (compile)
 nnoremap <leader>rx :!pdflatex %<cr>
 " Run Golang
 nnoremap <leader>rg :!go run %<cr>
 " Run Bash
-nnoremap <leader>rs :!./%<cr>
+nnoremap <leader>rb :!./%<cr>
 
 " Clear search results
 nnoremap <leader>c :noh<cr>
