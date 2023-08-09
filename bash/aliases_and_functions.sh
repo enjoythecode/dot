@@ -1,27 +1,22 @@
 # Common 1-ers
 alias l="ls -lah" # -l=show extended; -a=show hidden; -h=format sizes humanly
-function ls_show_largest_first () {
-    # use awk to get rid of the first two lines
-    # first line is "total <item_count>"
-    # second line is the ls line for ".." (since that is bound to be the largest)
-    ls -lahS | awk 'NR > 2' # -S; sort by file size
-}
-export -f ls_show_largest_first
-alias largest="ls_show_largest_first"
-
 alias d="cd"
 alias s="git status" # left middle finger on Colemak
 alias c="clear"
-alias mv="mv -i" # confirm before overwriting, silently works otherwise
 alias o="open"
-alias cs="clear && git status" # i use this a lot!
+alias a="clear && git status" # i use this a lot!
+alias r="$EDITOR ./README.md"
+alias t="$EDITOR ./TODO.md"
+alias k="cd $S_PATH_WIKI && $EDITOR"
+
+# Reasonable defaults
+alias mv="mv -i" # confirm before overwriting, silently works otherwise
 
 # "G"it
 alias g="git" # for custom commands
 alias gs="git status"
 alias ga="git add "
 alias gb="git branch "
-alias all="gall"
 alias gall="git add ."
 alias gulp="git add . && git commit" # not much of an acronym, just that gulp sounds similar and starts with a g
 alias gap="git add --patch"
@@ -38,13 +33,7 @@ alias grv="git remote -v"
 alias gc="git checkout "
 alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
 alias gl="git log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
-function git_add_all_commit () {
-    git status
-    git add .
-    git commit
-}
-export -f git_add_all_commit
-alias gac="git_add_all_commit"
+alias gac="git add . && git commit"
 
 # "M"ake
 alias m="make"
@@ -53,7 +42,7 @@ alias mt="make test"
 
 # "S"ource
 alias sv=". venv/bin/activate"
-alias sb=". $S_PATH_DOT/bash/components.sh"
+alias sb=". ~/.bashrc"
 
 # "E"dit
 alias e="$EDITOR"
@@ -64,10 +53,7 @@ alias ebp="$EDITOR ~/dot/bash/prompt.sh"
 alias ebcfg="$EDITOR ~/dot/bash/configuration.sh"
 alias ebc="$EDITOR ~/dot/bash/components.sh"
 alias ev="$EDITOR $S_PATH_VIMRC"
-alias r="$EDITOR ./README.md"
-alias t="$EDITOR ./TODO.md"
 alias th="$EDITOR ~/TODO.md"
-alias k="cd $S_PATH_WIKI && $EDITOR"
 alias size="du -hs * | sort -rh"
 alias st="python3 -m webbrowser 'localhost:8384'"
 
@@ -105,6 +91,15 @@ alias zz="z z"
 
 # Functions
 
+function ls_show_largest_first () {
+    # use awk to get rid of the first two lines
+    # first line is "total <item_count>"
+    # second line is the ls line for ".." (since that is bound to be the largest)
+    ls -lahS | awk 'NR > 2' # -S; sort by file size
+}
+export -f ls_show_largest_first
+
+alias largest="ls_show_largest_first"
 function list_available_functions () {
     declare -Fx | awk 'sub("declare -fx ", "")'
 }
