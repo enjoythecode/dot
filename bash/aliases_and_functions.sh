@@ -33,7 +33,7 @@ alias grv="git remote -v"
 alias gc="git checkout "
 alias dog="git log --all --decorate --oneline --graph" # https://stackoverflow.com/a/35075021
 alias gl="git log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
-alias gac="git add . && git commit"
+alias gac="git add . && git commit -m" # gulp, but without opening $EDITOR
 
 # "M"ake
 alias m="make"
