@@ -9,6 +9,7 @@ set_prompt () {
     Checkmark='\342\234\223'
 
 	PS1=""
+
     # If it was successful, print a green check mark. Otherwise, print
     # a red X.
     if [[ $Last_Command == 0 ]]; then
@@ -33,8 +34,13 @@ set_prompt () {
 	if [[ -n $branch ]]; then
 		PS1+="$White($branch) "
 	fi
+
+	# Git stuff placeholder
+	PS1+=" TODO "
+
 	# Reset the text color to the default.
 	PS1+="$Blue\\\$$Reset "
+
 }
 
 PROMPT_COMMAND='set_prompt'
