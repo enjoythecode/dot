@@ -77,7 +77,7 @@ let g:coq_settings = { 'auto_start': 'shut-up' }
 lua require("plugins")
 
 " let g:onedark_config = {'style': 'deep'}
-colorscheme tokyonight
+" colorscheme tokyonight
 
 
 " make gf open the file if it doesn't exist (from :h gf)
@@ -119,7 +119,8 @@ nnoremap <leader>q :q<CR>
 " TELESCOPE GOODNESS BAY-BUH!
 nnoremap <leader>tt <cmd>Telescope builtin<cr>
 nnoremap <leader>tf <cmd>Telescope find_files<cr>
-nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+" Easier to type. "Telescope Search"
+nnoremap <leader>ts <cmd>Telescope live_grep<cr>
 nnoremap <leader>tb <cmd>Telescope buffers<cr>
 nnoremap <leader>th <cmd>Telescope help_tags<cr>
 nnoremap <leader>tc <cmd>Telescope commands<cr>
