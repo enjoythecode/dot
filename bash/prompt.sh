@@ -32,11 +32,8 @@ set_prompt () {
 	# Print the git branch, if exists, in white
 	branch=$(git branch --show-current 2>/dev/null)
 	if [[ -n $branch ]]; then
-		PS1+="$White($branch) "
+		PS1+="$White $branch "
 	fi
-
-	# Git stuff placeholder
-	PS1+="$Blue TODO "
 
 	# Reset the text color to the default.
 	PS1+="$Blue\\\$$Reset "
