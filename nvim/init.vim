@@ -57,7 +57,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'folke/tokyonight' " theme
+Plug 'folke/tokyonight.nvim' " theme
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 Plug 'williamboman/nvim-lsp-installer'
@@ -76,9 +76,7 @@ let g:coq_settings = { 'auto_start': 'shut-up' }
 
 lua require("plugins")
 
-" let g:onedark_config = {'style': 'deep'}
-" colorscheme tokyonight
-
+colorscheme tokyonight-night
 
 " make gf open the file if it doesn't exist (from :h gf)
 :map gf :e <cfile><CR>
