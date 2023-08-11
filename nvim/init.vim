@@ -54,6 +54,16 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+" Completion stuff
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'petertriho/cmp-git'
+Plug 'crispgm/cmp-beancount'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -77,6 +87,10 @@ let g:coq_settings = { 'auto_start': 'shut-up' }
 lua require("plugins")
 
 colorscheme tokyonight-night
+
+lua <<EOF
+  -- Set up nvim-cmp.
+EOF
 
 " make gf open the file if it doesn't exist (from :h gf)
 :map gf :e <cfile><CR>
@@ -135,6 +149,9 @@ nnoremap <leader>ov :edit $MYVIMRC<cr>
 nnoremap <leader>op :edit ~/.config/nvim/lua/plugins.lua<cr>
 " Open Alternate file (usually, the previous file)
 nnoremap <leader>oa :edit #<cr>
+
+" Help
+nnoremap <leader>h :h 
 
 " toggle the terminAl (floating)
 nnoremap <leader>a <cmd>ToggleTerm direction=float<CR>
