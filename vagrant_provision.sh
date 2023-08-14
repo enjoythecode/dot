@@ -1,10 +1,13 @@
-sudo dnf install -y neovim python3-neovim
-sudo dnf install -y ripgrep fzf
-sudo dnf install -y python3-devel.x86_64 python3-pip
+sudo dnf install -y neovim
+sudo dnf install -y python3-devel.x86_64
+sudo dnf install -y python3-pip
+sudo dnf install -y python3-neovim
+sudo dnf install -y ripgrep
+sudo dnf install -y fzf
 
 python3 -m pip install beancount neovim
 
-# clone with HTTPS and then switch to SSH because I am lazy and 
+# clone with HTTPS and then switch to SSH because I am lazy and
 # don't want to figure out how to automatically add the GitHub host
 # to my trusted SSH prints.
 git clone https://github.com/enjoythecode/dot.git /home/vagrant/dot
