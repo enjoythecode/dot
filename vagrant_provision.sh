@@ -18,6 +18,6 @@ ln -s /home/vagrant/dot/nvim /home/vagrant/.config/nvim
 mkdir /home/vagrant/.bashrc.d
 ln -s /home/vagrant/dot/bash/entry.sh /home/vagrant/.bashrc.d/entry.sh
 
-git config pull.rebase true
+git config --global pull.rebase true
 git config --global user.email "sinan.yumurtaci@gmail.com"
 git config --global user.name "Sinan Yumurtacı"
