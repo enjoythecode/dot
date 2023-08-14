@@ -32,6 +32,16 @@ cmp.setup({
   })
 })
 
+cmp.setup.filetype('beancount', {
+  sources = cmp.config.sources({
+    { name = 'beancount',
+		option = {
+			account = "~/S/beans/sinan.beancount"
+		}
+	}
+  })
+})
+
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
