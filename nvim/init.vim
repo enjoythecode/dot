@@ -64,6 +64,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
+Plug 'ggandor/leap.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -133,6 +134,7 @@ nnoremap <leader>tt <cmd>Telescope builtin<cr>
 nnoremap <leader>tf <cmd>Telescope find_files<cr>
 " Easier to type. "Telescope Search"
 nnoremap <leader>ts <cmd>Telescope live_grep<cr>
+nnoremap <leader>tw yiw<cmd>Telescope live_grep<cr><C-r>"
 nnoremap <leader>tb <cmd>Telescope buffers<cr>
 nnoremap <leader>th <cmd>Telescope help_tags<cr>
 nnoremap <leader>tc <cmd>Telescope commands<cr>
