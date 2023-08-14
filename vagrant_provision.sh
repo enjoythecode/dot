@@ -18,6 +18,11 @@ ln -s /home/vagrant/dot/nvim /home/vagrant/.config/nvim
 mkdir /home/vagrant/.bashrc.d
 ln -s /home/vagrant/dot/bash/entry.sh /home/vagrant/.bashrc.d/entry.sh
 
+# this install nvim plugins (those that can install themselves within 10
+# seconds, anyways) so that I don't have to wait for it in the first launch of
+# nvim
+nvim -c ":PlugInstall" -c "sleep 10" -c ":q" -c ":q"
+
 git config --global pull.rebase true
 git config --global user.email "sinan.yumurtaci@gmail.com"
 git config --global user.name "Sinan Yumurtacı"
