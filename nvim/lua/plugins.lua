@@ -18,13 +18,10 @@ require("formatter").setup {
   log_level = vim.log.levels.WARN,
   filetype = {
     cpp = {
-      require("formatter.filetypes.cpp").clangformat,
 	  function ()
-		  return {
-			  args = {
-				  "--sort-includes=false" -- Sorting includes broke something once and I don't care enough about it to keep it around
-			  }
-			}
+		  local settings = require("formatter.filetypes.cpp").clangformat();
+		  table.insert(settings.args, '--style="{SortIncludes: false}"')
+		  return settings
 	  end
 	}
   }

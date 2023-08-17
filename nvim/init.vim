@@ -8,11 +8,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * FormatWrite
-augroup END
-au BufWritePost * lua require('lint').try_lint()
+" LSP / Lint / Formatter
+autocmd BufWritePost * FormatWrite
+autocmd BufWritePost * lua require('lint').try_lint()
 
 " display a column at textwidth + 1
 set colorcolumn=+1
