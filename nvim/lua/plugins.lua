@@ -4,11 +4,44 @@ require("leap").add_default_mappings()
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = { "python", "markdown", "lua", "vim" }
 }
-require("nvim-lsp-installer").setup {automatic_installation = true}
 require("toggleterm").setup()
 
-local cmp = require'cmp'
 
+require("nvim-lsp-installer").setup {automatic_installation = true}
+require("lint").linters_by_ft = {
+	cpp = {"cpplint", }
+}
+
+-- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
+require("formatter").setup {
+  logging = true,
+  log_level = vim.log.levels.WARN,
+  filetype = {
+    cpp = {
+      require("formatter.filetypes.cpp").clangformat,
+	  function ()
+		  return {
+			  args = {
+				  "--sort-includes=false" -- Sorting includes broke something once and I don't care enough about it to keep it around
+			  }
+			}
+	  end
+	}
+  }
+}
+require("mason").setup()
+require("mason-tool-installer").setup {
+	ensure_installed = {
+		"clang-format",
+		"cpplint",
+	},
+	auto_update = true,
+	run_on_start = true,
+	start_delay = 1000 -- milliseconds
+}
+
+
+local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)

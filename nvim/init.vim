@@ -8,6 +8,12 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
+au BufWritePost * lua require('lint').try_lint()
+
 " display a column at textwidth + 1
 set colorcolumn=+1
 highlight ColorColumn ctermbg=gray guibg=gray9
@@ -63,6 +69,12 @@ Plug 'crispgm/cmp-beancount'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+" LSP / Lint / Formatter
+Plug 'mfussenegger/nvim-lint'
+Plug 'mhartington/formatter.nvim'
+Plug 'williamboman/mason.nvim' " What I use to abstract away installation of LSPs / linters / formatters
+Plug 'WhoIsSethDaniel/mason-tool-installer.nvim' " What I use to automate mason commands
 
 Plug 'ggandor/leap.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
