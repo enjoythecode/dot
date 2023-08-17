@@ -151,6 +151,10 @@ nnoremap <leader>ov :edit $MYVIMRC<cr>
 nnoremap <leader>op :edit ~/.config/nvim/lua/plugins.lua<cr>
 " Open Alternate file (usually, the previous file)
 nnoremap <leader>oa :edit #<cr>
+" Open Readme.md
+nnoremap <leader>or :edit README.md<cr>
+" Open Todo.md
+nnoremap <leader>ot :edit TODO.md<cr>
 
 " Help
 nnoremap <leader>h :h 
