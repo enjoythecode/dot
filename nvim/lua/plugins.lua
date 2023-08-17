@@ -1,4 +1,5 @@
 require("nvim-web-devicons").setup()
+require("lualine").setup()
 require("leap").add_default_mappings()
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = { "python", "markdown", "lua", "vim" }
