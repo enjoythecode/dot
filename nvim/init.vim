@@ -17,11 +17,14 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
-" LSP / Lint / Formatter
+" Treesitter / LSP / Lint / Formatter
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mfussenegger/nvim-lint'
 Plug 'mhartington/formatter.nvim'
-Plug 'williamboman/mason.nvim' " What I use to abstract away installation of LSPs / linters / formatters
-Plug 'WhoIsSethDaniel/mason-tool-installer.nvim' " What I use to automate mason commands
+" What I use to abstract away installation of LSPs / linters / formatters
+Plug 'williamboman/mason.nvim'
+" What I use to automate mason commands
+Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 
@@ -33,8 +36,9 @@ Plug 'nvim-lualine/lualine.nvim'
 " Moving around
 Plug 'ggandor/leap.nvim'
 
-"Plug 'nvim-treesitter/nvim-treesitter'
+" Miscallenous
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
+Plug 'tpope/vim-speeddating' " <C-X>/<C-A> to decrement/increment dates
 
 " Nouns
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
@@ -148,10 +152,6 @@ nnoremap <leader>eh <c-W><c-H>
 nnoremap <leader>ej <c-W><c-K>
 nnoremap <leader>ek <c-W><c-J>
 nnoremap <leader>el <c-W><c-L>
-
-" nvim-tree
-nnoremap <leader>tn :NvimTreeToggle<CR>
-nnoremap <leader>to :NvimTreeFocus<CR>
 
 " ZZ
 nnoremap <leader>w :w<CR>
