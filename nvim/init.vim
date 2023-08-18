@@ -1,55 +1,3 @@
-" Highlight trailing whitespace
-" Source: https://vim.fandom.com/wiki/Highlight_unwanted_spaces (scroll down
-" to right before "Highlighting with the syntax command" for full block)
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-" LSP / Lint / Formatter
-autocmd BufWritePost * FormatWrite
-autocmd BufWritePost * lua require('lint').try_lint()
-
-" display a column at textwidth + 1
-set colorcolumn=+1
-highlight ColorColumn ctermbg=gray guibg=gray9
-
-set number " add line numbers
-set history=10000
-set hlsearch " highlight search
-set incsearch " show match as it is written
-set encoding=utf-8
-set ruler " row, col, place in file and currently typed command information at the bottom left. TLDR: airline without airline
-set relativenumber " make the line numberings relative for easier modification
-set cursorline " highlight the line the cursor is on
-set dictionary+=/usr/share/dict/words
-set scrolloff=9 " keep the current line towards the center
-set textwidth=80
-
-
-set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
-set showcmd			" display incomplete commands
-set ttimeout		" time out for key codes
-
-set path+=** " enable searching subdirectiories recursively
-set wildmenu " show tab completion in the command line for any command!
-
-
-set fillchars+=diff:╱ " for sindrets/diffview.nvim
-
-" use tabs for indentation and do not expand it to spaces. tabs are shown
-" to be 4 characters wide.
-set autoindent
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-
-" show whitespaces
-set list
-set listchars=tab:>·
-
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -58,7 +6,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-" Completion stuff
+
+" Completion
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
@@ -73,40 +22,108 @@ Plug 'mfussenegger/nvim-lint'
 Plug 'mhartington/formatter.nvim'
 Plug 'williamboman/mason.nvim' " What I use to abstract away installation of LSPs / linters / formatters
 Plug 'WhoIsSethDaniel/mason-tool-installer.nvim' " What I use to automate mason commands
-
-Plug 'ggandor/leap.nvim'
-Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'folke/tokyonight.nvim' " theme
-Plug 'tpope/vim-surround' " s (surrounding) as a noun
-Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
-Plug 'mfussenegger/nvim-jdtls'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'akinsho/toggleterm.nvim'
-Plug 'sindrets/diffview.nvim'
+
+" Visual
+Plug 'folke/tokyonight.nvim' " theme
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-lualine/lualine.nvim'
-" Install dependencies with :COQdeps, and then :COQnow to start it
-Plug 'christoomey/vim-sort-motion' " gs<motion> to sort a range
+
+" Moving around
+Plug 'ggandor/leap.nvim'
+
+"Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
+
+" Nouns
+Plug 'tpope/vim-surround' " s (surrounding) as a noun
+
+" Verbs
+" gs<motion> to sort a range
+Plug 'christoomey/vim-sort-motion'
+" gr<motion> to replace the without putting the old text into the default register
 Plug 'vim-scripts/ReplaceWithRegister'
+
+" Searching
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
-let g:coq_settings = { 'auto_start': 'shut-up' }
-
+" I configure my plugins here
 lua require("plugins")
 
-colorscheme tokyonight-night
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-lua <<EOF
-  -- Set up nvim-cmp.
-EOF
+" display a column at textwidth + 1
+set textwidth=80
+set colorcolumn=+1
+highlight ColorColumn ctermbg=gray guibg=gray9
+
+set number " add line numbers
+set history=10000
+set hlsearch " highlight search
+set incsearch " show match as it is written
+set encoding=utf-8
+set relativenumber " make the line numberings relative for easier modification
+set cursorline " highlight the line the cursor is on
+set dictionary+=/usr/share/dict/words
+set scrolloff=9 " keep the current line towards the center
+
+set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
+set showcmd " display incomplete commands
+set ttimeout " time out for key codes
+
+set path+=** " enable searching subdirectiories recursively
+set wildmenu " show tab completion in the command line for any command!
+
+" use spaces for indentation
+" expand tabs into 4 spaces
+" show tabs as 4 characters wide
+set autoindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+" show tabs as >···
+set list
+set listchars=tab:>·
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Highlight trailing whitespace
+" Source: https://vim.fandom.com/wiki/Highlight_unwanted_spaces (scroll down
+" to right before "Highlighting with the syntax command" for full block)
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" LSP / Lint / Formatter
+autocmd BufWritePost * FormatWrite
+autocmd BufWritePost * lua require('lint').try_lint()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+colorscheme tokyonight-night
 
 " make gf open the file if it doesn't exist (from :h gf)
 :map gf :e <cfile><CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let mapleader=' '
+
+" these are the Actions that I define for myself
+"split from the current location (and the uppercase version to separate up)
+nnoremap <leader>as i<CR><ESC><up>$
+nnoremap <leader>aS i<CR><ESC>dd<up><up>p<down>$
+" use a mark to not lose where we were
+" the mark used is j, which is hard to reach in Colemak so unlikely to collide
+nnoremap <leader>a; mjA;<ESC>`j
 
 " colemak: navigate with the new locations of hjkl
 " in colemak, but swap the up and right to make it right
@@ -136,6 +153,7 @@ nnoremap <leader>el <c-W><c-L>
 nnoremap <leader>tn :NvimTreeToggle<CR>
 nnoremap <leader>to :NvimTreeFocus<CR>
 
+" ZZ
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
@@ -169,11 +187,6 @@ nnoremap <leader>ot :edit TODO.md<cr>
 " Help
 nnoremap <leader>h :h 
 
-" toggle the terminAl (floating)
-nnoremap <leader>a <cmd>ToggleTerm direction=float<CR>
-" Terminal Quit Using <Esc>
-:tnoremap <Esc> <C-\><C-n>
-
 " Source Vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
@@ -195,11 +208,6 @@ nnoremap <leader>rb :!./%<cr>
 
 " Clear search results
 nnoremap <leader>c :noh<cr>
-
-" diffView
-nnoremap <leader>vo <cmd>DiffviewOpen<CR>
-nnoremap <leader>vq <cmd>DiffviewClose<CR>
-nnoremap <leader>vh <cmd>DiffviewFileHistory<CR>
 
 " cD into places
 nnoremap <leader>dd <cmd>cd ~/dot<CR>

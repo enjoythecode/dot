@@ -4,7 +4,6 @@ require("leap").add_default_mappings()
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = { "python", "markdown", "lua", "vim" }
 }
-require("toggleterm").setup()
 
 
 require("nvim-lsp-installer").setup {automatic_installation = true}
