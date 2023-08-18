@@ -109,6 +109,7 @@ autocmd BufWinLeave * call clearmatches()
 " LSP / Lint / Formatter
 autocmd BufWritePost * FormatWrite
 autocmd BufWritePost * lua require('lint').try_lint()
+autocmd BufWinEnter * lua require('lint').try_lint()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
