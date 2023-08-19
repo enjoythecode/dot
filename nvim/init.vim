@@ -39,6 +39,7 @@ Plug 'ggandor/leap.nvim'
 " Miscallenous
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 Plug 'tpope/vim-speeddating' " <C-X>/<C-A> to decrement/increment dates
+Plug 'eandrju/cellular-automaton.nvim' " cool dwarf trick
 
 " Nouns
 Plug 'tpope/vim-surround' " s (surrounding) as a noun
@@ -94,6 +95,10 @@ set shiftwidth=4
 set list
 set listchars=tab:>·
 
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
+set undodir=~/.vim/undo
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Highlight trailing whitespace
@@ -126,9 +131,12 @@ let mapleader=' '
 "split from the current location (and the uppercase version to separate up)
 nnoremap <leader>as i<CR><ESC><up>$
 nnoremap <leader>aS i<CR><ESC>dd<up><up>p<down>$
+" insert a semicolon to the end of the line without changing cursor position
 " use a mark to not lose where we were
 " the mark used is j, which is hard to reach in Colemak so unlikely to collide
 nnoremap <leader>a; mjA;<ESC>`j
+nnoremap <leader>atr :CellularAutomaton make_it_rain<CR>
+nnoremap <leader>atg :CellularAutomaton game_of_life<CR>
 
 " colemak: navigate with the new locations of hjkl
 " in colemak, but swap the up and right to make it right
@@ -141,6 +149,19 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
+
+" shortcuts for doing stuff with `iw` (word Under the cursor)
+" Telescope live_grep it. duplicated by <leader>tw
+nnoremap <leader>ut yiw<cmd>Telescope live_grep<cr><C-r>"
+" Search for it
+nnoremap <leader>us yiw/<C-r>"<cr>
+" search for it in Help
+nnoremap <leader>uh yiw:h <C-r>"<cr>
+" go Replace it
+" note that we use nmap instead of nnoremap because gr itself is mapped to the
+" ReplaceWithRegister command
+nmap <leader>ur griw
+
 
 " git shortcuts
 nnoremap <leader>gs :!git status<CR>
