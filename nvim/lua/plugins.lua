@@ -69,7 +69,8 @@ cmp.setup.filetype('beancount', {
 		option = {
 			account = "~/S/beans/sinan.beancount"
 		}
-	}
+	},
+    { name = "ultisnips" }
   })
 })
 

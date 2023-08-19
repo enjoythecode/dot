@@ -205,6 +205,8 @@ nnoremap <leader>oa :edit #<cr>
 nnoremap <leader>or :edit README.md<cr>
 " Open Todo.md
 nnoremap <leader>ot :edit TODO.md<cr>
+" Open ultisnip snippEts for this filetype
+nnoremap <leader>oe :UltiSnipsEdit<cr>
 
 " Help
 nnoremap <leader>h :h 
