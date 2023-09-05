@@ -12,19 +12,19 @@ require("lint").linters_by_ft = {
 }
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-require("formatter").setup {
-  logging = true,
-  log_level = vim.log.levels.WARN,
-  filetype = {
-    cpp = {
-	  function ()
-		  local settings = require("formatter.filetypes.cpp").clangformat();
-		  table.insert(settings.args, '--style="{SortIncludes: false}"')
-		  return settings
-	  end
-	}
-  }
-}
+-- require("formatter").setup {
+  --<esc>logging = true,
+  --<esc>log_level = vim.log.levels.WARN,
+  --<esc>filetype = {
+    --<esc>cpp = {
+	  --<esc>function ()
+		  --<esc>local settings = require("formatter.filetypes.cpp").clangformat();
+		  --<esc>table.insert(settings.args, '--style="{SortIncludes: false}"')
+		  --<esc>return settings
+	  --<esc>end
+	--<esc>}
+  --<esc>}
+--<esc>}
 require("mason").setup()
 require("mason-tool-installer").setup {
 	ensure_installed = {
