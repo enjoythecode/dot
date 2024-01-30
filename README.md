@@ -3,16 +3,21 @@
 (this is work-in-progress)
 
 (only on Windows;)
-```
-eval `ssh-agent` # On Windows only (?)
-ssh-add ~/.ssh/id_rsa
-```
+Admin-priviledged PowerShell, then;
+`Get-Service -Name ssh-agent | Set-Service -StartupType Manual`
+`Start-Service ssh-agent`
+
+Any PowerShell;
+`ssh-add c:/Users/Sinan/.ssh/id_rsa`
+
 
 Then;
 ```
 vagrant up
 vagrant ssh
 # hack away...
+# iterate on vagrant scripts with:
+vagrant destroy
 ```
 
 # Required Software for the Thin-client to Vagrant
