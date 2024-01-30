@@ -1,5 +1,5 @@
-- provision script hangs on vim, really needs a fix!
 - git config adding automatically in the provision script
+- add automatic vim plugin installation command to vagrant_provision
 - vim completion for .beancount
 - vim syntax highlighting for .beancount
 - Global git commit precommit if committing TODO to the code
