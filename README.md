@@ -39,7 +39,10 @@ https://apt.syncthing.net/
 
 https://github.com/ryanoasis/nerd-fonts
 
-(use shallow clone from step 5, and then install script from step 3)
+1. Use shallow clone from step 5
+2. Install script from step 3
+3. (for Windows) put alacritty.toml into `%APPDATA%/alacritty/alacritty.toml`.
+   Create the directory if it does not exist.
 
 ## OS X only
 `brew install coreutils` is required for gdate replacement to date
