@@ -1,4 +1,5 @@
 - git config adding automatically in the provision script
+- machine time is not my local timezone, fixing that would help with some things
 - add automatic vim plugin installation command to vagrant_provision
 - vim completion for .beancount
 - vim syntax highlighting for .beancount
