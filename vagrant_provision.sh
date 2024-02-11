@@ -5,7 +5,7 @@ sudo dnf install -y python3-neovim
 sudo dnf install -y ripgrep
 sudo dnf install -y fzf
 
-python3 -m pip install beancount neovim
+python3 -m pip install beancount neovim pandas
 
 # clone with HTTPS and then switch to SSH because I am lazy and
 # don't want to figure out how to automatically add the GitHub host
