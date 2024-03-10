@@ -142,10 +142,11 @@ nnoremap <leader>a; mjA;<ESC>`j
 nnoremap <leader>atr :CellularAutomaton make_it_rain<CR>
 nnoremap <leader>atg :CellularAutomaton game_of_life<CR>
 
-" colemak: navigate with the new locations of hjkl
-" in colemak, but swap the up and right to make it right
-noremap j k
-noremap k j
+" colemak goofiness to be able to use hjkl-keys; use them while holding Ctrl(!!)
+" <C-h> already works
+noremap <C-n> <Down>
+noremap <C-e> <Up>
+noremap <C-i> <Right>
 
 " More undo break points in insert mode
 " from https://github.com/jackfranklin/dotfiles/blob/master/nvim/maps.vim
