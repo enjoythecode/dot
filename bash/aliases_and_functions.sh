@@ -40,6 +40,7 @@ alias gac="git add . && git commit -m" # gulp, but without opening $EDITOR
 alias m="make"
 alias mb="make build"
 alias mt="make test"
+alias mr="make run"
 
 # "S"ource
 alias sv=". venv/bin/activate"

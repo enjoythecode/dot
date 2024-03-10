@@ -23,9 +23,10 @@ Plug 'mfussenegger/nvim-lint'
 Plug 'mhartington/formatter.nvim'
 " What I use to abstract away installation of LSPs / linters / formatters
 Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 " What I use to automate mason commands
 Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
-Plug 'williamboman/nvim-lsp-installer'
+" Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 
 " Visual
@@ -36,7 +37,7 @@ Plug 'nvim-lualine/lualine.nvim'
 " Moving around
 Plug 'ggandor/leap.nvim'
 
-" Miscallenous
+" Miscellaneous
 Plug 'jiangmiao/auto-pairs' " automatically adds matching pairs of parens and quotes
 Plug 'tpope/vim-speeddating' " <C-X>/<C-A> to decrement/increment dates
 Plug 'eandrju/cellular-automaton.nvim' " cool dwarf trick
@@ -53,6 +54,9 @@ Plug 'vim-scripts/ReplaceWithRegister'
 " Searching
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" uuhhh apparently coc.nvim with haxe LSP is easy?
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -192,7 +196,7 @@ nnoremap <leader>tc <cmd>Telescope commands<cr>
 " Open New file
 nnoremap <leader>on :enew<CR>
 " Open Daily Note
-nnoremap <leader>od :edit `sh/open_daily_note.sh`<CR>
+nnoremap <leader>od :edit `~/dot/sh/open_daily_note.sh`<CR>
 " Open Scratch
 nnoremap <leader>os :edit ~/scratch.txt<cr>
 " Open my .Vimrc
@@ -229,6 +233,8 @@ nnoremap <leader>rx :!pdflatex %<cr>
 nnoremap <leader>rg :!go run %<cr>
 " Run Bash
 nnoremap <leader>rb :!./%<cr>
+" I found myself reaching for this, therefore, I shall define it. "run test"
+nnoremap <leader>rt :!make test<cr>
 
 " Clear search results
 nnoremap <leader>c :noh<cr>

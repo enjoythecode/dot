@@ -6,7 +6,9 @@ require'nvim-treesitter.configs'.setup {
 }
 
 
-require("nvim-lsp-installer").setup {automatic_installation = true}
+-- I think this thing was superseded by mason??
+-- require("nvim-lsp-installer").setup {automatic_installation = true}
+--
 require("lint").linters_by_ft = {
 	cpp = {"cpplint", }
 }
@@ -25,11 +27,16 @@ require("lint").linters_by_ft = {
 	--<esc>}
   --<esc>}
 --<esc>}
+-- order per README in https://github.com/williamboman/mason-lspconfig.nvim
 require("mason").setup()
+require("mason-lspconfig").setup()
+require("lspconfig").haxe_language_server.setup {}
+
 require("mason-tool-installer").setup {
 	ensure_installed = {
 		"clang-format",
 		"cpplint",
+		"haxe-language-server",
 	},
 	auto_update = true,
 	run_on_start = true,
@@ -99,4 +106,10 @@ cmp.setup.cmdline(':', {
   }, {
     { name = 'cmdline' }
   })
+})
+
+vim.api.nvim_create_autocmd("BufRead,BufNewFile", {
+  pattern = "*.hx",
+  command = "set filetype=haxe",
+
 })
