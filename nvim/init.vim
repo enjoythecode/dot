@@ -144,9 +144,10 @@ nnoremap <leader>atg :CellularAutomaton game_of_life<CR>
 
 " colemak goofiness to be able to use hjkl-keys; use them while holding Ctrl(!!)
 " <C-h> already works
-noremap <C-n> <Down>
-noremap <C-e> <Up>
-noremap <C-i> <Right>
+"noremap <C-h> h
+nnoremap <C-n> j
+nnoremap <C-e> k
+nnoremap <C-i> l
 
 " More undo break points in insert mode
 " from https://github.com/jackfranklin/dotfiles/blob/master/nvim/maps.vim
@@ -197,7 +198,7 @@ nnoremap <leader>tc <cmd>Telescope commands<cr>
 " Open New file
 nnoremap <leader>on :enew<CR>
 " Open Daily Note
-nnoremap <leader>od :edit `~/dot/sh/open_daily_note.sh`<CR>
+nnoremap <leader>od :edit `~/dot/sh/open_daily_note.sh`<CR> \| :cd `$S_PATH_WIKI` <CR>
 " Open Scratch
 nnoremap <leader>os :edit ~/scratch.txt<cr>
 " Open my .Vimrc
