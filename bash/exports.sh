@@ -1,4 +1,4 @@
-if kicommand -v nvim &> /dev/null
+if type "nvim" > /dev/null;
 then
     export EDITOR="nvim"
 else
