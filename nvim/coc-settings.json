@@ -1,0 +1,16 @@
+{
+    "languageserver": {
+        "haxe": {
+            "command": "node",
+            "args": ["/home/vagrant/src/haxe-language-server/bin/server.js"],
+            "filetypes": ["haxe"],
+            "trace.server": "verbose",
+            "initializationOptions": {
+                "displayArguments": ["build.hxml"]
+            },
+            "settings": {
+                "haxe.executable": "haxe"
+            }
+        }
+    }
+}

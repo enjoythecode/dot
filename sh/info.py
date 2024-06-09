@@ -3,6 +3,20 @@
 import datetime as dt
 import astral
 from astral.sun import sun
+import hashlib, datetime, struct, requests, re, sys
+
+# adapted from
+# https://geohashing.site/geohashing/Implementations/Libraries/Python
+def calculate_geohash():
+    w30 = 0 # apparently this should be 0 if I'm west of -30 longitude and 1 otherwise
+    date = datetime.date.today()
+    url = (date - datetime.timedelta(w30)).strftime("http://carabiner.peeron.com/xkcd/map/data/%Y/%m/%d")
+    djia = requests.get(url).text
+    if 'Not Found' in djia:
+        return None, None
+    sum = hashlib.md5("%s-%s" % (date, djia)).digest()
+    lat, lon = [x/2.**64 for x in struct.unpack_from(">QQ", sum)]
+    return lat, lon
 
 def astral_stuff():
     # https://astral.readthedocs.io/en/latest/
@@ -64,3 +78,11 @@ def astral_stuff():
     # daytime tomorrow
 
 astral_stuff()
+
+print()
+
+lat, lon = calculate_geohash()
+if lat is None:
+    print("Hmm, today's geohash coordinate is not known yet.")
+else:
+    print(f"Today's coordinates are {lat}, {lon}")

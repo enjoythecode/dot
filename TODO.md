@@ -1,3 +1,8 @@
+- add the steps to get this up-and-running to vagrant_provision
+  https://github.com/vshaxe/haxe-language-server?tab=readme-ov-file
+- git config adding automatically in the provision script
+- machine time is not my local timezone, fixing that would help with some things
+- add automatic vim plugin installation command to vagrant_provision
 - vim completion for .beancount
 - vim syntax highlighting for .beancount
 - Global git commit precommit if committing TODO to the code

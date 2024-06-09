@@ -1,0 +1,13 @@
+snippet transaction
+`!v strftime("%Y")`-${1:MM}-${2:DD} * "${3:Payee}"
+  ${5:AccountOne}             ${6:AmountOne} USD
+  ${7:AccountTwo}
+
+endsnippet
+
+snippet transaction_with_description
+`!v strftime("%Y")`-${1:MM}-${2:DD} * "${3:Payee}" "${4:Description}"
+  ${5:AccountOne}             ${6:AmountOne} USD
+  ${7:AccountTwo}
+
+endsnippet

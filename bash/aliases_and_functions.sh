@@ -19,6 +19,7 @@ alias ga="git add "
 alias gb="git branch "
 alias gall="git add ."
 alias gulp="git add . && git commit" # not much of an acronym, just that gulp sounds similar and starts with a g
+alias gulp2="git add . && git commit && git push" # gulp && g2
 alias gap="git add --patch"
 alias gallop="git add --patch ."
 alias g2="git push" # git "to"
@@ -39,6 +40,7 @@ alias gac="git add . && git commit -m" # gulp, but without opening $EDITOR
 alias m="make"
 alias mb="make build"
 alias mt="make test"
+alias mr="make run"
 
 # "S"ource
 alias sv=". venv/bin/activate"
