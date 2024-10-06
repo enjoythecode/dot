@@ -12,6 +12,9 @@ alias k="cd $S_PATH_WIKI && $EDITOR"
 # Reasonable defaults
 alias mv="mv -i" # confirm before overwriting, silently works otherwise
 
+# Muscle Memory
+alias cls="clear"
+
 # "G"it
 alias g="git" # for custom commands
 alias gs="git status"
