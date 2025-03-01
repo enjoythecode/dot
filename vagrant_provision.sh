@@ -29,6 +29,6 @@ ln -s /home/vagrant/dot/bash/entry.sh /home/vagrant/.bashrc.d/entry.sh
 # the plugins
 # nvim "+:PlugInstall" "+:sleep 1" "+:q" "+:q"
 
-git config --global pull.rebase true
-git config --global user.email "sinan.yumurtaci@gmail.com"
-git config --global user.name "Sinan Yumurtacı"
+# git config --global pull.rebase true
+# git config --global user.email "sinan.yumurtaci@gmail.com"
+# git config --global user.name "Sinan Yumurtacı"

@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # ssh-add -L
   #
 
-  #config.vm.network "private_network", ip: "10.10.10.10" 
+  # config.vm.network "private_network", ip: "10.10.10.10" 
 
   config.ssh.forward_agent = true
 
@@ -56,4 +56,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.provision "shell", inline: "cat '/home/vagrant/.ssh/user.pub' >> '/home/vagrant/.ssh/authorized_keys'"
 
   config.vm.provision :shell, path: "vagrant_provision.sh", privileged: false
+  config.vm.network "forwarded_port", guest: 5000, host: 5001
 end
