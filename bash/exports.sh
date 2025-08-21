@@ -1,3 +1,4 @@
+
 if type "nvim" > /dev/null;
 then
     export EDITOR="nvim"
@@ -7,13 +8,6 @@ fi
 
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-
-export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.7/bin" #eventually obsolete
-export PATH="$PATH:/usr/local/share/dotnet" # what is this?
-export PATH="$PATH:/Users/sinany/bin"
-export PATH="$PATH:~/apache/apache-maven-3.8.5/bin" # apache should probably not be in ~, but who am i to say?
-
-export CUSTOM_BASHRC_SOURCED="true"
 
 # Check if we are running in WSL under Windows, in which case we have a specific "Home" where S/ etc. are stored,
 # separate from "Home" as in tilda (~)
@@ -38,11 +32,6 @@ export S_PATH_DOT="$S_PATH_HOME/dot"
 export S_PATH_WIKI="$S_PATH_S/Zettelkasten"
 export S_PATH_VIMRC="$S_PATH_DOT/nvim/init.vim"
 export S_PATH_BASH_ALIASES="$S_PATH_DOT/bash/aliases_and_functions.sh"
-
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-
-# Currently, only correct for Mac!
-export FACTORIO_PATH="$HOME/Library/Application Support/factorio"
 
 # to generate:
 # cd ~/dot && dircolors -b config/dircolors

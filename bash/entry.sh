@@ -1,4 +1,6 @@
-. ~/dot/bash/configuration.sh
+HISTSIZE=20000
+HISTFILESIZE=20000
+
 . ~/dot/bash/exports.sh
 . ~/dot/bash/aliases_and_functions.sh
 . ~/dot/bash/prompt.sh
