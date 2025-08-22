@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Common 1-ers
 alias l="ls -lah" # -l=show extended; -a=show hidden; -h=format sizes humanly
 alias d="cd"
@@ -42,12 +44,14 @@ alias gac="git add . && git commit -m" # gulp, but without opening $EDITOR
 # "M"ake
 alias m="make"
 alias mb="make build"
+alias md="make dev"
 alias mt="make test"
 alias mr="make run"
 
 # "S"ource
-alias sv=". venv/bin/activate"
-alias sb=". ~/.bashrc"
+alias sv="source venv/bin/activate"
+alias sb="source ~/.bashrc"
+alias stm="tmux source ~/dot/config/.tmux.conf"
 
 # "E"dit
 alias e="$EDITOR"
@@ -69,6 +73,10 @@ alias dot="cd $S_PATH_DOT"
 # "J"upyter "N"otebook
 alias jn="jupyter notebook"
 alias jnnb="jupyter notebook --no-browser"
+
+# Programs
+alias vsc="code ." # VS Code
+alias grug="claude" # LLM
 
 # One letter shortcuts for z.sh
 alias za="z a"

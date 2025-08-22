@@ -10,8 +10,7 @@ set_prompt () {
 
 	PS1=""
 
-    # If it was successful, print a green check mark. Otherwise, print
-    # a red X.
+    # last command ? green check mark : red X.
     if [[ $Last_Command == 0 ]]; then
         PS1+="$Green$Checkmark "
     else
@@ -27,16 +26,16 @@ set_prompt () {
     fi
 
     # Print the working directory and prompt marker in blue
-    PS1+="$Blue\\w "
+    PS1+="$Blue\\w"
 
 	# Print the git branch, if exists, in white
 	branch=$(git branch --show-current 2>/dev/null)
 	if [[ -n $branch ]]; then
-		PS1+="$White $branch "
+		PS1+="$White @ $branch "
 	fi
 
-	# Reset the text color to the default.
-	PS1+="$Blue\\\$$Reset "
+	PS1+="$Reset " # Reset the text color to the default.
+    PS1+="\n>"
 
 }
 

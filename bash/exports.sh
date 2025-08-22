@@ -1,3 +1,4 @@
+#!/bin/bash
 
 if type "nvim" > /dev/null;
 then
